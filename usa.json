@@ -1,0 +1,164 @@
+{
+	"mapwidth": "960",
+	"mapheight": "600",
+	"groups": [
+		{
+			"id": "offices",
+			"title": "Offices",
+			"color": "#0c704e",
+			"toggle": "true",
+			"switchoff": "false",
+			"legend": "true"
+		}
+	],
+	"levels": [
+		{
+			"id":"usa",
+			"title":"United States",
+			"map":"maps/usa.svg",
+			"minimap":"maps/usa-mini.jpg",
+			"locations": [
+				{
+					"id": "ca-losangeles",
+					"title": "Los Angeles",
+					"pin": "pin-classic pin-label",
+					"category": "offices",
+					"x": "0.0892",
+					"y": "0.5742",
+					"action": "open-link-new-tab",
+					"link": "/los-angeles-land-surveyor.html",
+					"fill": "#0c704e"
+				},
+				{
+					"id": "ca-sacramento",
+					"title": "Sacramento",
+					"pin": "pin-classic pin-label",
+					"category": "offices",
+					"x": "0.0585",
+					"y": "0.3734",
+					"action": "open-link-new-tab",
+					"link": "/sacramento-land-surveyor.html",
+					"fill": "#0c704e"
+				},
+				{
+					"id": "ca-sandiego",
+					"title": "San Diego",
+					"pin": "pin-classic pin-label",
+					"category": "offices",
+					"x": "0.1071",
+					"y": "0.6142",
+					"action": "open-link-new-tab",
+					"link": "/san-diego-land-surveyor.html",
+					"fill": "#0c704e"
+				},
+				{
+					"id": "ca-sanfrancisco",
+					"title": "San Francisco",
+					"pin": "pin-classic pin-label",
+					"category": "offices",
+					"x": "0.0390",
+					"y": "0.4093",
+					"action": "open-link-new-tab",
+					"link": "/san-francisco-land-surveyor.html",
+					"fill": "#0c704e"
+				},
+				{
+					"id": "ca",
+					"title": "California",
+					"pin": "hidden no-fill",
+					"category": "states",
+					"x": "0.0718",
+					"y": "0.4546"
+				},
+				{
+					"id": "nv-lasvegas",
+					"title": "Las Vegas",
+					"pin": "pin-classic pin-label",
+					"category": "offices",
+					"x": "0.1534",
+					"y": "0.5068",
+					"action": "open-link-new-tab",
+					"link": "/las-vegas-land-surveyor.html",
+					"fill": "#0c704e"
+				},
+				{
+					"id": "nv",
+					"title": "Nevada",
+					"pin": "hidden no-fill",
+					"category": "states",
+					"x": "0.1372",
+					"y": "0.3808",
+					"action": "disabled"
+				},
+				{
+					"id": "co",
+					"title": "Colorado",
+					"pin": "hidden no-fill",
+					"x": "0.3340",
+					"y": "0.4568"
+				},
+				{
+					"id": "co-location",
+					"title": "Colorado",
+					"pin": "pin-classic pin-label",
+					"x": "0.3340",
+					"y": "0.4568",
+					"action": "open-link-new-tab",
+					"link": "/colorado-land-surveyor.html",
+					"fill": "#0c704e"
+				},
+				{
+					"id": "wa",
+					"title": "Washington",
+					"pin": "hidden no-fill",
+					"x": "0.1331",
+					"y": "0.0971"
+				},
+				{
+					"id": "wa-location",
+					"title": "Washington",
+					"pin": "pin-classic pin-label",
+					"x": "0.1331",
+					"y": "0.0971",
+					"action": "open-link-new-tab",
+					"link": "/washington-surveyor.html",
+					"fill": "#0c704e"
+				},
+				{
+					"id": "az",
+					"title": "Arizona",
+					"pin": "hidden no-fill",
+					"x": "0.2090",
+					"y": "0.5975"
+				},
+				{
+					"id": "az-location",
+					"title": "Arizona",
+					"pin": "pin-classic pin-label",
+					"x": "0.2090",
+					"y": "0.5975",
+					"action": "open-link-new-tab",
+					"link": "/arizona-land-surveyor.html",
+					"fill": "#0c704e"
+				},
+				{
+					"id": "or",
+					"title": "Oregon",
+					"pin": "hidden no-fill",
+					"x": "0.1071",
+					"y": "0.1938"
+				},
+				{
+					"id": "or-location",
+					"title": "Oregon",
+					"pin": "pin-classic pin-label",
+					"x": "0.1071",
+					"y": "0.1938",
+					"action": "open-link-new-tab",
+					"link": "/oregon-land-surveyors.html",
+					"fill": "#0c704e"
+				}
+			]
+		}
+	]
+}
