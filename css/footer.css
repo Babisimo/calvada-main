@@ -1,0 +1,108 @@
+/* Base styling for footer */
+footer {
+    background-color: #238d4f; /* Dark green background */
+    color: white;
+    padding: 20px;
+    font-family: Arial, sans-serif; /* Common, readable font */
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Centers children horizontally */
+    align-items: center; /* Aligns children vertically */
+    text-align: center; /* Center text for single elements like links */
+    flex-wrap: wrap; /* Allows items to wrap as needed */
+}
+
+/* Each section styling */
+footer section {
+    flex: 1 1 200px; /* Flex-grow, flex-shrink and flex-basis set for responsive sizes */
+    margin: 10px; /* Uniform margin for clean spacing */
+    display: flex; /* Enables flexbox within each section */
+    flex-direction: column; /* Stacks content vertically within each section */
+    justify-content: center; /* Center content vertically within each section */
+    align-items: center; /* Center content horizontally within each section */
+}
+
+footer h2 {
+    font-size: 18px; /* Slightly larger size for section headers */
+    margin-bottom: 10px; /* Space below headers */
+}
+
+/* Styling for paragraphs and address in footer */
+footer p, footer address {
+    font-size: 14px; /* Standard text size */
+    line-height: 1.5; /* Good readability for line spacing */
+}
+
+/* Link styling within the footer */
+footer a {
+    color: #fff; /* Maintains white color for all links for consistency */
+    text-decoration: none; /* No underline by default */
+}
+
+footer a:hover, footer a:focus {
+    color: #adebad; /* Light green for hover and focus states */
+    text-decoration: underline; /* Underline on hover/focus for better accessibility */
+}
+
+/* Styling for social media links and images */
+footer nav {
+    display: flex; /* Flexbox layout for better alignment of icons */
+    justify-content: center; /* Centers icons horizontally */
+    align-items: center; /* Aligns icons vertically */
+    padding: 0; /* Removes padding */
+}
+
+footer nav a {
+    margin: 0 5px; /* Uniform margin for spacing between icons */
+}
+
+footer nav img {
+    width: 24px; /* Appropriate size for social icons */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Styling for copyright section */
+div.copyright {
+    text-align: center; /* Center aligns the text */
+    background-color: #1c7430; /* Slightly darker green background for contrast */
+    color: #ffffff;
+    padding: 10px 0; /* Padding for top and bottom */
+    font-size: 12px; /* Smaller text size for copyright info */
+    width: 100%; /* Ensures full width */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column; /* Stack sections vertically on small screens */
+    }
+
+    footer section {
+        width: 100%; /* Full width for each section on small screens */
+    }
+
+    footer nav {
+        margin-top: 10px; /* Adds space above icons when stacked */
+    }
+}
+
+/* Styling for scroll to top link */
+a.scrollToTop {
+    display: inline-block;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background-color: #238d4f; /* Matching footer background */
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 50%; /* Rounded shape */
+    text-decoration: none; /* No underline */
+}
+
+a.scrollToTop:hover {
+    background-color: #1c7430; /* Darker green on hover */
+}
+
+/* Ensures visibility of font awesome icon */
+.fa-chevron-up {
+    color: white; /* Icon color */
+}

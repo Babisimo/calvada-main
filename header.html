@@ -3,7 +3,9 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/normalize.css">
+  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+  
+  <link rel="stylesheet" href="css/header.css">
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
@@ -23,35 +25,24 @@
 
   <!-- Primary Page Layout -->
 
-   <header>
-    <div class="row container">
-      <div class="three columns middleVert"><a href="index.html"><img src="images/logo.png" alt="Logo of Calvada" class="logo"></a></div>
-        <div class="nine columns middleVert">
-          <!-- <p class="contactInfo"><span class="contactNumber"><a href="tel:800-225-8232">(800) Calvada</a></span><br/>225-8232</p> -->
-          <div class="navContainer">
+  <header>
+    <div class="header">
+      <a href="index.html"><img src="images/logo.png" alt="Logo of Calvada" class="logo"></a>
+      <div class="navContainer">
+        <nav>
+          <input type="checkbox">
+          <label class="show-menu"></label>
+          <ul id="menu" class="navigation">
+            <li><a href="about.html" id="firstLink" >About</a><ul class="hidden">
+            <li><a href="our-team.html">Our Team</a></li>
+          </ul>
 
-          <nav>
-            <input type="checkbox" id="show-menu" role="button">
-            <label for="show-menu" class="show-menu"></label>
-            <ul id="menu" class="navigation">
-              <li><a href="about.html" id="firstLink" >About</a><ul class="hidden">
-              <li><a href="our-team.html">Our Team</a></li>
-            </ul>
-
-            <li><a href="services.html">Services</a></li>
-            <li><a href="locations.html">Locations</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="careers.html" id="lastLink">Careers</a></li>
-            </ul>
-
-  </nav>
-
-  </div>
-
-      </div>
-
-    </div>
-
+          <li><a href="services.html">Services</a></li>
+          <li><a href="locations.html">Locations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="careers.html" id="lastLink">Careers</a></li>
+          </nav>
+        </div>
   </header>
 
   

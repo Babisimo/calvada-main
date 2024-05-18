@@ -1,0 +1,101 @@
+/* General header styling */
+.header {
+  width: 100%;
+  background-color: #ffffffb7; /* You can change this to fit your site's theme */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center; /* Ensures vertical centering of child elements */
+  
+}
+
+.logo {
+  height: 50px; /* Adjust based on your logo */
+  width: auto;
+  padding: 10px 20px;
+  display: block; /* Ensure the logo is a block level element for proper spacing */
+}
+
+/* Navigation Container */
+.navContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1; /* Takes up remaining space to push nav to the right */
+}
+
+/* Styling for navigation menu */
+nav {
+  position: relative;
+}
+
+.navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 10px; /* Space between menu items */
+  align-items: center; /* Aligns navigation items vertically */
+}
+
+.navigation li {
+  padding: 15px 15px; /* Adjusted padding for better vertical alignment */
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #333; /* Change the color as needed */
+  font-weight: bold;
+}
+
+/* Hidden sub-menu */
+.hidden {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  max-height: fit-content;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 2px;
+  list-style: none;
+}
+
+.navigation li:hover .hidden {
+  display: block; /* Show sub-menu on hover */
+}
+
+/* Checkbox and menu label for mobile */
+input[type="checkbox"] {
+  display: none; /* Hide the checkbox */
+}
+
+.show-menu {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .navContainer {
+    flex-direction: column;
+  }
+
+  .show-menu {
+    display: block;
+    padding: 10px;
+  }
+
+  #menu {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    display: none; /* Hidden by default */
+  }
+
+  input[type="checkbox"]:checked + .show-menu + .navigation {
+    display: flex; /* Show menu when checkbox is checked */
+  }
+}

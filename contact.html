@@ -1,175 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <!-- Basic Page Needs -->
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Contact | Calvada Surveying, Inc.</title>
-    <meta name="description" content="Calvada Surveying, Inc is established in 1989 and offer superior 3D surveying, boundary surveys, ACSM and ALTA Survey services for Northern California, Southern California, Colorado, Nevada, Oregon, Washington and Arizona.">
+    <meta
+      name="description"
+      content="Calvada Surveying, Inc is established in 1989 and offers superior 3D surveying, boundary surveys, ACSM and ALTA Survey services for Northern California, Southern California, Colorado, Nevada, Oregon, Washington and Arizona."
+    />
 
-  <!--#include virtual="header.html" -->
-  <div class="supportHeader"><img src="images/header-support.jpg"></div>
+    <!-- Header include -->
+    <!--#include virtual="header.html" -->
+  </head>
+
+  <body>
+    <!-- Support Header Image -->
+    <div class="supportHeader">
+      <img src="images/header-support.jpg" alt="Calvada Surveying Header" />
+    </div>
+
+    <!-- Main Content Area -->
     <main>
-      <div>
-        <section class="homeBg">
-          <div>
-            <article class="mainCopy">
-              <h1>Contact</h1>
-              <h2>Our Locations</h2>
-              <hr>
-              <div class="row container">
-                <div class="eight columns">
-                  <div class="five columns">
-                    <div class="location">
-                      <p class="boldTxt">Corona, CA - Corporate</p>
-                      <p>411 Jenks Circle, Ste 205<br>Corona, CA 92878</p>
-                      <p><a href="tel:951-280-9960">(951) 280-9960</a></p>
-                      <p><a href="tel:951-280-9746">(951) 280-9746</a> fax</p>
-                      <p><a href="mailto:sales-ca@calvada.com">sales-ca@calvada.com</a></p>
-                      <br/>
-                      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13247.615872445793!2d-117.593485!3d33.892127!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x15dba6fb30d89b37!2sCalvada+Surveying%2C+Inc!5e0!3m2!1sen!2sus!4v1550011748444" width="600" height="450" frameborder="0" style="border:0" allowfullscreen class="gMap"></iframe>
-                    </div>
-                  </div>
-                  <hr>
-               </div>
-            
-              <div class="four columns">
-                <br>
-                <h2>Send Us An Email</h2>
-                <form method="post" name="contactform" action="form-to-email.php" id="contactform" class="orderForm" onsubmit="return checkform(this);">
-                  <input id="website" name="website" type="text" value=""  />
-                  <div class="formFields"><input type="text" name="name" placeholder="Name:" required></div>
-                  <div class="formFields"><input type="text" name="email" placeholder="Email:" required></div>
-                  <div class="formFields"><input type="text" name="phone" placeholder="Phone:" required></div>
-                  <div class="formFields"><textarea name="message" placeholder="Message:" required></textarea></div>
-                  <input type="hidden" id="txtCaptcha" />
-                  <input type="text" name="txtInput" id="txtInput" size="15" />
-                  <input type="submit" name='Submit' value="Submit">
-                </form>
+      <section class="homeBg">
+        <article class="mainCopy">
+          <h1>Contact</h1>
+          <h2>Our Locations</h2>
+          <hr />
+          <div class="row container">
+            <div class="eight columns">
+              <div class="location">
+                <p class="boldTxt">Corona, CA - Corporate</p>
+                <p>411 Jenks Circle, Ste 205<br />Corona, CA 92878</p>
+                <p><a href="tel:951-280-9960">(951) 280-9960</a></p>
+                <p><a href="tel:951-280-9746">(951) 280-9746 fax</a></p>
+                <p>
+                  <a href="mailto:sales-ca@calvada.com">sales-ca@calvada.com</a>
+                </p>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13247.615872445793!2d-117.593485!3d33.892127!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x15dba6fb30d89b37!2sCalvada+Surveying%2C+Inc!5e0!3m2!1sen!2sus!4v1550011748444"
+                  width="600"
+                  height="450"
+                  frameborder="0"
+                  style="border: 0"
+                  allowfullscreen
+                  class="gMap"
+                ></iframe>
               </div>
-            </article>
+            </div>
+            <hr />
+            <div class="four columns">
+              <h2>Send Us An Email</h2>
+              <form
+                method="post"
+                name="contactform"
+                action="form-to-email.php"
+                id="contactform"
+                class="orderForm"
+                onsubmit="return checkform(this);"
+              >
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  value=""
+                  hidden
+                />
+                <div class="formFields">
+                  <input type="text" name="name" placeholder="Name:" required />
+                </div>
+                <div class="formFields">
+                  <input
+                    type="text"
+                    name="email"
+                    placeholder="Email:"
+                    required
+                  />
+                </div>
+                <div class="formFields">
+                  <input
+                    type="text"
+                    name="phone"
+                    placeholder="Phone:"
+                    required
+                  />
+                </div>
+                <div class="formFields">
+                  <textarea
+                    name="message"
+                    placeholder="Message:"
+                    required
+                  ></textarea>
+                </div>
+                <input type="hidden" id="txtCaptcha" />
+                <input type="text" name="txtInput" id="txtInput" size="15" />
+                <input type="submit" name="Submit" value="Submit" />
+              </form>
+            </div>
           </div>
-        </section>
-      </div>
+        </article>
+      </section>
     </main>
 
-
-
-
-
-  <!--#include virtual="footer.html" -->
-
-  <script>
-
-    $( "body" ).addClass( "support" );
-
-  </script>
-
-  <script type="text/javascript">
-
-  function checkform(theform){
-
-  var why = "";
-
-
-
-  if(theform.txtInput.value == ""){
-
-  why += "- Security code should not be empty.\n";
-
-  }
-
-  if(theform.txtInput.value != ""){
-
-  if(ValidCaptcha(theform.txtInput.value) == false){
-
-  why += "- Security code did not match.\n";
-
-  }
-
-  }
-
-  if(why != ""){
-
-  alert(why);
-
-  return false;
-
-  }
-
-  }
-
-
-
-  //Generates the captcha function
-
-  var a = Math.ceil(Math.random() * 9)+ '';
-
-  var b = Math.ceil(Math.random() * 9)+ '';
-
-  var c = Math.ceil(Math.random() * 9)+ '';
-
-  var d = Math.ceil(Math.random() * 9)+ '';
-
-  var e = Math.ceil(Math.random() * 9)+ '';
-
-
-
-  var code = a + b + c + d + e;
-
-  document.getElementById("txtCaptcha").value = code;
-
-  document.getElementById("txtCaptchaDiv").innerHTML = code;
-
-
-
-  // Validate the Entered input aganist the generated security code function
-
-  function ValidCaptcha(){
-
-  var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
-
-  var str2 = removeSpaces(document.getElementById('txtInput').value);
-
-  if (str1 == str2){
-
-  return true;
-
-  }else{
-
-  return false;
-
-  }
-
-  }
-
-
-
-  // Remove the spaces from the entered and generated code
-
-  function removeSpaces(string){
-
-  return string.split(' ').join('');
-
-  }
-
-  </script>
-
-  <script>
-
-  $('#contactform').submit(function(){    
-
-          if ($('input#website').val().length != 0) {
-
-              return false;
-
-          } 
-
-  });
-
-  </script>
-
+    <!-- Footer Include -->
+    <!--#include virtual="footer.html" -->
+
+    <!-- Scripts -->
+    <script>
+      // Set class for body
+      $("body").addClass("support");
+
+      // Contact form validation and captcha
+      function checkform(theform) {
+        var why = "";
+
+        if (theform.txtInput.value == "") {
+          why += "- Security code should not be empty.\n";
+        }
+
+        if (theform.txtInput.value != "") {
+          if (!ValidCaptcha(theform.txtInput.value)) {
+            why += "- Security code did not match.\n";
+          }
+        }
+
+        if (why != "") {
+          alert(why);
+          return false;
+        }
+      }
+
+      // Generates the captcha function
+      function generateCaptcha() {
+        var a = Math.ceil(Math.random() * 9) + "";
+        var b = Math.ceil(Math.random() * 9) + "";
+        var c = Math.ceil(Math.random() * 9) + "";
+        var d = Math.ceil(Math.random() * 9) + "";
+        var e = Math.ceil(Math.random() * 9) + "";
+        var code = a + b + c + d + e;
+        document.getElementById("txtCaptcha").value = code;
+        document.getElementById("txtCaptchaDiv").innerHTML = code;
+      }
+
+      // Validates the Entered input against the generated security code
+      function ValidCaptcha() {
+        var str1 = removeSpaces(document.getElementById("txtCaptcha").value);
+        var str2 = removeSpaces(document.getElementById("txtInput").value);
+        return str1 == str2;
+      }
+
+      // Remove the spaces from the entered and generated code
+      function removeSpaces(string) {
+        return string.split(" ").join("");
+      }
+
+      // Initialize captcha when document is ready
+      $(document).ready(function () {
+        generateCaptcha();
+      });
+
+      // Prevent form submission if the hidden 'website' field is filled (spam protection)
+      $("#contactform").submit(function () {
+        return $("input#website").val().length == 0;
+      });
+    </script>
   </body>
-
-  </html>
-
+</html>
