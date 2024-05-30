@@ -7,6 +7,98 @@
 * 12/29/2014
 */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+
+/* Support Header CSS */
+.supportHeader {
+  font-size: 0;
+  position: relative;
+}
+
+.supportHeader img {
+  width: 100%;
+}
+
+/* Services CSS 
+---------------------------------------------- */
+.services-list {
+  max-width: 600px; /* Limiting max width for better readability */
+}
+
+.services-list h2 {
+  text-align: left; /* Align the heading to the left */
+  font-size: 24px; /* Larger font size for the heading */
+  margin-bottom: 5px; /* Space below the heading */
+}
+
+.services-list ul {
+  list-style: none; /* Removing default list styling */
+  padding: 0; /* Removing padding */
+  margin: 0; /* Removing margin */
+}
+
+.services-list li {
+  margin-bottom: 5px; /* Margin between items */
+}
+
+.services-list a {
+  color: #0066cc; /* Blue color for links */
+  text-decoration: none; /* No underline */
+  font-weight: bold; /* Make the font bold */
+}
+
+
+/* Boilerplate CSS
+---------------------------------------------- */
+
+/* Boilerplate styles for the main element */
+.main {
+  padding: 20px; /* Consistent padding around all main content */
+  margin: auto; /* Center the main element on the page */
+  max-width: 1200px; /* Max width to prevent overly wide lines of text */
+}
+
+.main h1, .main h2 {
+  text-align: left; /* Aligns headers to the left */
+  font-size: 28px; /* Slightly larger font size for main headers */
+  margin-top: 0; /* Removes top margin for clean top alignment */
+  margin-bottom: 16px; /* Adds space below the headers */
+}
+
+.main p {
+  font-size: 16px; /* Standard text size for readability */
+  line-height: 1.6; /* Line height for better readability */
+  margin-bottom: 16px; /* Space below paragraphs to separate text blocks */
+}
+
+.main a {
+  color: #0066cc; /* Standard blue for links for consistency */
+  text-decoration: none; /* Removes underline from links */
+  font-weight: bold; /* Bold links to make them stand out */
+}
+
+.main a:hover {
+  text-decoration: underline; /* Adds underline on hover for link interaction */
+}
+
+.main ul {
+  list-style-type: none; /* Removes bullet points from lists */
+  padding: 0; /* Removes padding from lists */
+}
+
+.main li {
+  padding: 8px 0; /* Adds vertical padding for list items */
+}
+
+.main section {
+  margin-bottom: 24px; /* Adds bottom margin to each section for spacing */
+}
+
+
 html {
   font-size: 62.5%;
 }
