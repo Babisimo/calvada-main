@@ -2,14 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Your Website Title Here</title>
+    <title>
+      Calvada Surveying Inc | California Land Surveying Services | Land
+      Surveying Firm
+    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
       content="Calvada Surveying, Inc. offers professional land surveying services including ALTA/NSPS surveys, boundary surveys, topographic mapping, and construction staking in California, Arizona, Nevada, Colorado, and Washington. Trusted for precision and reliability, our experienced surveyors ensure high-quality results for every project."
     />
     <link rel="canonical" href="https://www.yourwebsite.com/this-page-url" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/logos/favicon.ico" type="image/x-icon" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -22,7 +25,10 @@
       property="og:description"
       content="Calvada Surveying, Inc. offers professional land surveying services including ALTA/NSPS surveys, boundary surveys, topographic mapping, and construction staking in California, Arizona, Nevada, Colorado, and Washington. Trusted for precision and reliability, our experienced surveyors ensure high-quality results for every project."
     />
-    <meta property="og:image" content="https://calvada.com/images/logo.png" />
+    <meta
+      property="og:image"
+      content="https://calvada.com/images/logos/logo.png"
+    />
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
@@ -33,11 +39,25 @@
   <body>
     <!-- Header Section -->
     <header>
-      <img
-        src="images/header.jpg"
-        alt="Calvada Surveying Land Services"
-        class="header-img"
-      />
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img src="images/header.jpg" style="width: 100%" />
+        </div>
+        <div class="mySlides fade">
+          <img src="images/three_pics.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="images/three_pics_2.png" style="width:100%">
+        </div>
+        <div class="mySlides fade">
+          <img src="images/header-support.jpg" style="width:100%">
+        </div>
+        
+        
+        <!-- Navigation buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
     </header>
 
     <!-- Main Content Area -->
@@ -51,9 +71,9 @@
       <section class="services-description">
         <p>
           With over three decades of excellence in land surveying across
-          <strong>Arizona, California, Colorado, and beyond</strong>, Calvada
-          Surveying is here to deliver precision and reliability for your
-          projects.
+          <strong>Arizona, California, Colorado, Nevada, and beyond</strong>,
+          Calvada Surveying is here to deliver precision and reliability for
+          your projects.
         </p>
       </section>
 
@@ -84,6 +104,8 @@
     <!--#include virtual="footer.html" -->
 
     <!-- Scripts -->
+    <script src="scripts/handle_slideshow.js"></script>
+    <script src="scripts/swipe_mobile.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
       $(document).ready(function () {

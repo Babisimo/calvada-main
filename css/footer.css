@@ -1,108 +1,122 @@
+/* CSS Variables for color scheme */
+:root {
+    --footer-background: #238d4f; /* Dark green background */
+    --footer-hover-background: #1c7430; /* Darker green for hover */
+    --text-color: #ffffff; /* White text color */
+    --hover-text-color: #adebad; /* Light green for hover and focus states */
+}
+
 /* Base styling for footer */
 footer {
-    background-color: #238d4f; /* Dark green background */
-    color: white;
-    padding: 20px;
-    font-family: Arial, sans-serif; /* Common, readable font */
-    display: flex; /* Enables flexbox layout */
-    justify-content: center; /* Centers children horizontally */
-    align-items: center; /* Aligns children vertically */
-    text-align: center; /* Center text for single elements like links */
-    flex-wrap: wrap; /* Allows items to wrap as needed */
+    background-color: var(--footer-background);
+    color: var(--text-color);
+    padding: 15px; /* Increased padding for better spacing */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    max-width: 100%; /* Maximum width for large screens */
+    margin: auto; /* Center footer if it's less than the maximum width */
 }
 
 /* Each section styling */
 footer section {
-    flex: 1 1 200px; /* Flex-grow, flex-shrink and flex-basis set for responsive sizes */
-    margin: 10px; /* Uniform margin for clean spacing */
-    display: flex; /* Enables flexbox within each section */
-    flex-direction: column; /* Stacks content vertically within each section */
-    justify-content: center; /* Center content vertically within each section */
-    align-items: center; /* Center content horizontally within each section */
+    flex: 1 1 200px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 footer h2 {
-    font-size: 18px; /* Slightly larger size for section headers */
-    margin-bottom: 10px; /* Space below headers */
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: white;
 }
 
 /* Styling for paragraphs and address in footer */
 footer p, footer address {
-    font-size: 14px; /* Standard text size */
-    line-height: 1.5; /* Good readability for line spacing */
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--text-color); /* Unified text color */
 }
 
 /* Link styling within the footer */
 footer a {
-    color: #fff; /* Maintains white color for all links for consistency */
-    text-decoration: none; /* No underline by default */
+    color: inherit; /* Inherits color from parent */
+    text-decoration: none;
 }
 
 footer a:hover, footer a:focus {
-    color: #adebad; /* Light green for hover and focus states */
-    text-decoration: underline; /* Underline on hover/focus for better accessibility */
+    color: var(--hover-text-color);
+    text-decoration: underline;
 }
 
 /* Styling for social media links and images */
 footer nav {
-    display: flex; /* Flexbox layout for better alignment of icons */
-    justify-content: center; /* Centers icons horizontally */
-    align-items: center; /* Aligns icons vertically */
-    padding: 0; /* Removes padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
 
 footer nav a {
-    margin: 0 5px; /* Uniform margin for spacing between icons */
+    margin: 0 5px;
 }
 
 footer nav img {
-    width: 24px; /* Appropriate size for social icons */
-    height: auto; /* Maintain aspect ratio */
+    width: 24px;
+    height: auto;
 }
 
 /* Styling for copyright section */
 div.copyright {
-    text-align: center; /* Center aligns the text */
-    background-color: #1c7430; /* Slightly darker green background for contrast */
-    color: #ffffff;
-    padding: 10px 0; /* Padding for top and bottom */
-    font-size: 12px; /* Smaller text size for copyright info */
-    width: 100%; /* Ensures full width */
+    text-align: center;
+    background-color: var(--footer-hover-background);
+    color: var(--text-color);
+    padding: 10px 0;
+    font-size: 12px;
+    width: 100%;
 }
 
 /* Responsive design adjustments */
 @media (max-width: 768px) {
     footer {
-        flex-direction: column; /* Stack sections vertically on small screens */
+        flex-direction: column;
     }
 
     footer section {
-        width: 100%; /* Full width for each section on small screens */
+        width: 100%;
     }
 
     footer nav {
-        margin-top: 10px; /* Adds space above icons when stacked */
+        margin-top: 10px;
     }
 }
 
 /* Styling for scroll to top link */
 a.scrollToTop {
+    text-align: center;
     display: inline-block;
     position: fixed;
     right: 20px;
     bottom: 20px;
-    background-color: #238d4f; /* Matching footer background */
-    color: #ffffff;
+    background-color: var(--footer-background);
+    color: var(--text-color);
     padding: 10px;
-    border-radius: 50%; /* Rounded shape */
-    text-decoration: none; /* No underline */
+    width: 25px;
+    border-radius: 50%;
+    text-decoration: none;
 }
 
 a.scrollToTop:hover {
-    background-color: #1c7430; /* Darker green on hover */
+    background-color: var(--footer-hover-background);
 }
 
 /* Ensures visibility of font awesome icon */
 .fa-chevron-up {
-    color: white; /* Icon color */
+    color: var(--text-color);
 }

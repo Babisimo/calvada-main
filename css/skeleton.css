@@ -1,147 +1,11 @@
 /*
-
-
-
 * Skeleton V2.0.4
-
-
-
 * Copyright 2014, Dave Gamache
-
-
-
 * www.getskeleton.com
-
-
-
 * Free to use under the MIT license.
-
-
-
 * http://www.opensource.org/licenses/mit-license.php
-
-
-
 * 12/29/2014
-
-
-
 */
-
-/* Table of contents
-
-
-
-––––––––––––––––––––––––––––––––––––––––––––––––––
-
-
-
-- Grid
-
-
-
-- Base Styles
-
-
-
-- Typography
-
-
-
-- Links
-
-
-
-- Buttons
-
-
-
-- Forms
-
-
-
-- Lists
-
-
-
-- Code
-
-
-
-- Tables
-
-
-
-- Spacing
-
-
-
-- Utilities
-
-
-
-- Clearing
-
-
-
-- Custom Code
-
-
-
-- Media Queries
-
-
-
-*/
-
-/* Grid
-
-
-
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.container {
-  position: relative;
-
-  width: 100%;
-
-  max-width: 1224px;
-
-  margin: 0 auto;
-
-  padding: 0 0px;
-
-  box-sizing: border-box;
-}
-
-.column,
-.columns {
-  width: 100%;
-
-  display: inline-block;
-
-  box-sizing: border-box;
-
-  vertical-align: top;
-}
-
-/* For devices larger than 400px */
-
-/* Base Styles
-  
-  
-  
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-/* NOTE
-  
-  
-  
-  html is set to 62.5% so that all the REM measurements throughout Skeleton
-  
-  
-  
-  are based on 10px sizing. So basically 1.5rem = 15px :) */
 
 html {
   font-size: 62.5%;
@@ -149,23 +13,12 @@ html {
 
 body {
   font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
-
   line-height: 1.6;
-
   font-weight: 400;
-
   color: #212121;
-
   background: white;
-
   font-family: "centuryGothic", sans-serif;
 }
-
-/* Typography
-  
-  
-  
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 h1,
 h2,
@@ -175,7 +28,7 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 20px;
-  font-weight: 100;
+  font-weight: 400;
   letter-spacing: -1px;
   line-height: 40px;
 }
@@ -215,11 +68,6 @@ h4,
 h6 {
   color: #0c704e;
 }
-
-/*h3, h4, h5, h6 {
-  line-height: 20px;
-  margin-bottom: 0px;
-}*/
 
 @media (min-width: 1001px) {
   h1 {
@@ -281,33 +129,19 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
   display: inline-block;
-
   height: 38px;
-
   padding: 0 30px;
-
   color: white;
-
   text-align: center;
-
   font-size: 14px;
-
   line-height: 38px;
-
   letter-spacing: 0.1rem;
-
   text-decoration: none;
-
   white-space: nowrap;
-
   background-color: transparent;
-
   cursor: pointer;
-
   box-sizing: border-box;
-
   background: #147556;
-
   border: none;
 }
 
@@ -373,17 +207,11 @@ input[type="password"],
 textarea,
 select {
   height: 38px;
-
   padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
-
   background-color: #fff;
-
   border: 1px solid #d1d1d1;
-
   border-radius: 4px;
-
   box-shadow: none;
-
   box-sizing: border-box;
 }
 
@@ -398,17 +226,13 @@ input[type="url"],
 input[type="password"],
 textarea {
   -webkit-appearance: none;
-
   -moz-appearance: none;
-
   appearance: none;
 }
 
 textarea {
   min-height: 65px;
-
   padding-top: 6px;
-
   padding-bottom: 6px;
 }
 
@@ -422,22 +246,18 @@ input[type="password"]:focus,
 textarea:focus,
 select:focus {
   border: 1px solid #33c3f0;
-
   outline: 0;
 }
 
 label,
 legend {
   display: block;
-
   margin-bottom: 0.5rem;
-
   font-weight: 600;
 }
 
 fieldset {
   padding: 0;
-
   border-width: 0;
 }
 
@@ -453,5 +273,3 @@ label > .label-body {
 
   font-weight: normal;
 }
-
-
