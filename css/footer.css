@@ -82,6 +82,10 @@ div.copyright {
     width: 100%;
 }
 
+div.copyright a{
+
+}
+
 /* Responsive design adjustments */
 @media (max-width: 768px) {
     footer {

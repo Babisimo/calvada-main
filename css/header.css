@@ -13,7 +13,7 @@
 }
 
 .logo {
-  height: 50px; /* Adjust based on your logo */
+  height: 60px; /* Adjust based on your logo */
   width: auto;
   padding: 10px 20px;
   display: block; /* Ensure the logo is a block level element for proper spacing */
