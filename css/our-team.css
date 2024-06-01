@@ -1,0 +1,49 @@
+
+h1, h2 {
+    color: #333;
+}
+
+.team-category {
+    margin-bottom: 30px;
+}
+
+
+.team-photo {
+    width: 250px; /* Adjust based on your design needs */
+    float: left;
+    margin-right: 20px;
+    border-radius: 8px; /* Optional rounded corners */
+    margin-bottom: 30px;
+}
+
+figcaption {
+    margin-left: 180px; /* Adjust the left margin to not overlap with the image */
+    margin-top: 30px;
+}
+
+figcaption p {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+}
+
+figcaption a {
+    color: black;
+}
+
+strong {
+    color: #000;
+}
+
+em {
+    font-style: italic;
+    color: #555;
+}
+
+hr {
+    clear: both;
+    border: none;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+}
