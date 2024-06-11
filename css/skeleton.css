@@ -100,7 +100,7 @@
 
 
 html {
-  font-size: 62.5%;
+  font-size: 65.5%;
 }
 
 body {
@@ -364,4 +364,43 @@ label > .label-body {
   margin-left: 0.5rem;
 
   font-weight: normal;
+}
+
+
+/* Small Devices, Tablets */
+@media (max-width: 768px) {
+  .main, header, footer {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .main h1, .main h2, .main h3, .main h4, .main h5, .main h6 {
+    font-size: 90%; /* Reducing font size for smaller screens */
+  }
+
+  .services-list, .services-list h2 {
+    max-width: 100%; /* Full width for service lists on smaller screens */
+    text-align: center; /* Centering headings on small screens */
+  }
+
+  input[type="submit"], input[type="reset"], input[type="button"], .button {
+    padding: 0 15px; /* Smaller padding for buttons */
+    font-size: 90%; /* Smaller font size for readability */
+  }
+
+  input, textarea, select {
+    width: 100%; /* Full-width form elements for easier interaction */
+  }
+}
+
+/* Medium Devices, Desktops */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .main, header, footer {
+    padding: 15px;
+    max-width: 95%;
+  }
+
+  .main h1, .main h2, .main h3, .main h4, .main h5, .main h6 {
+    font-size: 95%; /* Slightly reduced font size */
+  }
 }

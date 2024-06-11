@@ -1,4 +1,3 @@
-
 h1, h2 {
     color: #333;
 }
@@ -7,29 +6,35 @@ h1, h2 {
     margin-bottom: 30px;
 }
 
-
 .team-photo {
-    width: 250px; /* Adjust based on your design needs */
-    float: left;
-    margin-right: 20px;
-    border-radius: 8px; /* Optional rounded corners */
-    margin-bottom: 30px;
+    width: 250px; /* Adjust this width in the media queries below */
+    border-radius: 8px;
+    margin-right: 20px; /* Ensure some spacing between the image and text */
+}
+
+figure {
+    display: flex;
+    align-items: center; /* Aligns children (img and figcaption) vertically in the center */
+    margin-bottom: 30px; /* Space between each team member entry */
 }
 
 figcaption {
-    margin-left: 180px; /* Adjust the left margin to not overlap with the image */
-    margin-top: 30px;
+    flex: 1; /* Takes the remaining space after the image */
+}
+
+figcaption p, figcaption a {
+    margin: 10px 0;  /* Consistent margin for p and a tags */
+    font-size: 14px; /* Adjust this font size in the media queries below */
+    line-height: 1.6;
 }
 
 figcaption p {
-    margin-top: 10px;
-    font-size: 14px;
-    line-height: 1.6;
     color: #666;
 }
 
 figcaption a {
     color: black;
+    text-decoration: none; /* Optionally removes underline from links */
 }
 
 strong {
@@ -46,4 +51,37 @@ hr {
     border: none;
     border-top: 1px solid #ccc;
     margin-top: 20px;
+    padding: 1em;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .team-photo {
+        width: 100%; /* Make the image full width */
+        margin-right: 0; /* Remove margin to fit the image properly on smaller screens */
+    }
+
+    figure {
+        flex-direction: column; /* Stack image and figcaption vertically */
+        align-items: flex-start; /* Align items to the start of the figure */
+    }
+
+    figcaption {
+        margin-left: 0; /* Remove margin to align text properly under the image */
+        margin-top: 10px; /* Add some space between the image and text */
+    }
+
+    figcaption p, figcaption a {
+        font-size: 12px; /* Smaller font size for smaller screens */
+    }
+
+    h1, h2 {
+        font-size: 1.5em; /* Adjust header font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.25em; /* Even smaller font sizes for very small screens */
+    }
 }

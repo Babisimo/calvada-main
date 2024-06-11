@@ -1,0 +1,119 @@
+body {
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header, main, footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.supportHeader img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.main {
+    background: #fff;
+    padding: 20px;
+}
+
+.career-opportunities, .current-openings {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #0275d8;
+}
+
+.job-listings {
+    list-style-type: none;
+    padding: 0;
+}
+
+.job-listings li {
+    background: #e9ecef;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.job-listings a {
+    text-decoration: none;
+    color: #333;
+}
+
+.position-details summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.position-details .job-description {
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+details[open] summary ~ * {
+    animation: slideDown 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive media queries */
+@media (max-width: 992px) {
+    header, main, footer {
+        padding: 10px;
+    }
+
+    .main {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    header, main, footer {
+        padding: 5px;
+    }
+
+    .main {
+        padding: 10px;
+    }
+
+    .job-listings li {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    header, main, footer {
+        padding: 0;
+    }
+
+    .main {
+        padding: 5px;
+    }
+
+    h2 {
+        font-size: 1.5em; /* Reduce the size of H2 elements on small screens */
+    }
+
+    .job-listings li {
+        padding: 5px;
+    }
+}

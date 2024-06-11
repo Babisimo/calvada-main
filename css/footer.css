@@ -10,21 +10,21 @@
 footer {
     background-color: var(--footer-background);
     color: var(--text-color);
-    padding: 15px; /* Increased padding for better spacing */
+    padding: 15px;
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     flex-wrap: wrap;
-    max-width: 100%; /* Maximum width for large screens */
-    margin: auto; /* Center footer if it's less than the maximum width */
+    max-width: 100%;
+    margin: auto;
     max-height: 20rem;
 }
 
 /* Each section styling */
 footer section {
-    flex: 1 1 200px;
+    flex: 1 1 200px; /* Allows each section to grow and shrink with a base width of 200px */
     margin: 10px;
     display: flex;
     flex-direction: column;
@@ -35,19 +35,17 @@ footer section {
 footer h2 {
     font-size: 18px;
     margin-bottom: 10px;
-    color: white;
 }
 
 /* Styling for paragraphs and address in footer */
 footer p, footer address {
     font-size: 14px;
     line-height: 1.5;
-    color: var(--text-color); /* Unified text color */
 }
 
 /* Link styling within the footer */
 footer a {
-    color: inherit; /* Inherits color from parent */
+    color: inherit;
     text-decoration: none;
 }
 
@@ -83,22 +81,30 @@ div.copyright {
     width: 100%;
 }
 
-div.copyright a{
-
+@media (max-width: 768px) {
+    footer section {
+        flex: 1 0 100%; /* Flex shrink is set to 0, flex-basis to 100% */
+        margin: 10px 0;
+        padding: 0 5px; /* Ensure padding does not cause overflow */
+    }
 }
 
-/* Responsive design adjustments */
-@media (max-width: 768px) {
+
+@media (max-width: 480px) {
     footer {
-        flex-direction: column;
+        padding: 15px 5px; /* Reduce padding on very small screens */
     }
 
-    footer section {
-        width: 100%;
+    footer h2 {
+        font-size: 14px; /* Even smaller headers for tiny displays */
     }
 
-    footer nav {
-        margin-top: 10px;
+    footer p, footer address {
+        font-size: 12px; /* Smaller font size for compact display */
+    }
+
+    footer nav img {
+        width: 20px; /* Smaller icons for compact layout */
     }
 }
 
@@ -112,7 +118,7 @@ a.scrollToTop {
     background-color: var(--footer-background);
     color: var(--text-color);
     padding: 10px;
-    width: 25px;
+    width: 40px;
     border-radius: 50%;
     text-decoration: none;
 }
