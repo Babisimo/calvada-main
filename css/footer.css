@@ -72,13 +72,21 @@ footer nav img {
 }
 
 /* Styling for copyright section */
-div.copyright {
+.copyright {
     text-align: center;
     background-color: var(--footer-hover-background);
     color: var(--text-color);
     padding: 10px 0;
     font-size: 12px;
     width: 100%;
+}
+
+.copyright a {
+    color: #adebad;
+}
+
+.copyright a:hover { 
+    color: #adebad;
 }
 
 @media (max-width: 768px) {
