@@ -11,7 +11,7 @@
 
     <link rel="icon" href="images/logos/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/skeleton.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
     <!-- Header include -->
     <!--#include virtual="header.html" -->
@@ -95,8 +95,18 @@
                     required
                   ></textarea>
                 </div>
+                <div id="txtCaptchaDiv"></div> <!-- Added element to display Captcha -->
                 <input type="hidden" id="txtCaptcha" />
-                <input type="text" name="txtInput" id="txtInput" size="15" />
+                <div class="formFields">
+                  <input
+                    type="text"
+                    name="txtInput"
+                    id="txtInput"
+                    placeholder="Enter Captcha"
+                    size="15"
+                    required
+                  />
+                </div>
                 <input type="submit" name="Submit" value="Submit" />
               </form>
             </div>

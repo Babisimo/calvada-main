@@ -1,87 +1,190 @@
-h1, h2 {
-    color: #333;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ffffff;
+  overflow-x: hidden;
+  box-sizing: border-box; /* Ensure padding and borders are included within element widths */
+  background-color: #365e32;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+header,
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+header img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.main {
+  padding: 20px;
+  text-align: center;
+}
+
+h1,
+h2 {
+  color: #ffffff;
 }
 
 .team-category {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #00000020;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 2rem;
 }
 
 .team-photo {
-    width: 250px; /* Adjust this width in the media queries below */
-    border-radius: 8px;
-    margin-right: 20px; /* Ensure some spacing between the image and text */
+  width: 250px; /* Adjust this width in the media queries below */
+  border-radius: 8px;
+  margin-right: 20px; /* Ensure some spacing between the image and text */
 }
 
 figure {
-    display: flex;
-    align-items: center; /* Aligns children (img and figcaption) vertically in the center */
-    margin-bottom: 30px; /* Space between each team member entry */
+  display: flex;
+  align-items: center; /* Aligns children (img and figcaption) vertically in the center */
+  margin-bottom: 30px; /* Space between each team member entry */
 }
 
 figcaption {
-    flex: 1; /* Takes the remaining space after the image */
+  flex: 1; /* Takes the remaining space after the image */
 }
 
-figcaption p, figcaption a {
-    margin: 10px 0;  /* Consistent margin for p and a tags */
-    font-size: 14px; /* Adjust this font size in the media queries below */
-    line-height: 1.6;
+figcaption p,
+figcaption a {
+  margin: 10px 0; /* Consistent margin for p and a tags */
+  font-size: 1em; /* Adjust this font size in the media queries below */
+  line-height: 1.6;
+}
+
+figcaption strong {
+  font-size: 1.2em;
 }
 
 figcaption p {
-    color: #666;
+  color: #ffffff;
 }
 
 figcaption a {
-    color: black;
-    text-decoration: none; /* Optionally removes underline from links */
+  color: #E8DFCA;
+  text-decoration: none; /* Optionally removes underline from links */
 }
 
 strong {
-    color: #000;
+  color: #FD9B63;
+
 }
 
 em {
-    font-style: italic;
-    color: #555;
+  font-style: italic;
+  color: #d7d7d7;
 }
 
 hr {
-    clear: both;
-    border: none;
-    border-top: 1px solid #ccc;
-    margin-top: 20px;
-    padding: 1em;
+  clear: both;
+  border: none;
+  border-top: 1px solid #ccc;
+  margin-top: 20px;
+  padding: 1em;
 }
 
 /* Responsive Media Queries */
 @media (max-width: 768px) {
-    .team-photo {
-        width: 100%; /* Make the image full width */
-        margin-right: 0; /* Remove margin to fit the image properly on smaller screens */
-    }
+  .team-photo {
+    width: 100%; /* Make the image full width */
+    margin-right: 0; /* Remove margin to fit the image properly on smaller screens */
+  }
 
-    figure {
-        flex-direction: column; /* Stack image and figcaption vertically */
-        align-items: flex-start; /* Align items to the start of the figure */
-    }
+  figure {
+    flex-direction: column; /* Stack image and figcaption vertically */
+    align-items: flex-start; /* Align items to the start of the figure */
+  }
 
-    figcaption {
-        margin-left: 0; /* Remove margin to align text properly under the image */
-        margin-top: 10px; /* Add some space between the image and text */
-    }
+  figcaption {
+    margin-left: 0; /* Remove margin to align text properly under the image */
+    margin-top: 10px; /* Add some space between the image and text */
+  }
 
-    figcaption p, figcaption a {
-        font-size: 12px; /* Smaller font size for smaller screens */
-    }
+  figcaption p,
+  figcaption a {
+    font-size: 12px; /* Smaller font size for smaller screens */
+  }
 
-    h1, h2 {
-        font-size: 1.5em; /* Adjust header font size for smaller screens */
-    }
+  h1,
+  h2 {
+    font-size: 1.5em; /* Adjust header font size for smaller screens */
+  }
 }
 
 @media (max-width: 480px) {
-    h1, h2 {
-        font-size: 1.25em; /* Even smaller font sizes for very small screens */
-    }
+  h1,
+  h2 {
+    font-size: 1.25em; /* Even smaller font sizes for very small screens */
+  }
+}
+
+.parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 20px 20px;
+  width: 100%;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #365e32;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.title-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  color: white;
+  background: #00000020;
+}
+
+a {
+  color: #FD9B63;
+  text-decoration: none; /* Optionally removes underline from links */
 }

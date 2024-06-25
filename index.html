@@ -2,102 +2,63 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>
-      Calvada Surveying Inc | California Land Surveying Services | Land
-      Surveying Firm
-    </title>
+    <title>Calvada Surveying Inc | California Land Surveying Services</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Calvada Surveying, Inc. offers professional land surveying services including ALTA/NSPS surveys, boundary surveys, topographic mapping, and construction staking in California, Arizona, Nevada, Colorado, and Washington. Trusted for precision and reliability, our experienced surveyors ensure high-quality results for every project."
-    />
-
+    <meta name="description" content="Calvada Surveying, Inc. offers professional land surveying services including ALTA/NSPS surveys, boundary surveys, topographic mapping, and construction staking in California, Arizona, Nevada, Colorado, and Washington. Trusted for precision and reliability, our experienced surveyors ensure high-quality results for every project." />
     <link rel="icon" href="images/logos/favicon.ico" type="image/x-icon" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://www.facebook.com/calvadasurveyinginc/"
-    />
-    <meta property="og:title" content="Calvada Surveying Facebook" />
-    <meta
-      property="og:description"
-      content="Calvada Surveying, Inc. offers professional land surveying services including ALTA/NSPS surveys, boundary surveys, topographic mapping, and construction staking in California, Arizona, Nevada, Colorado, and Washington. Trusted for precision and reliability, our experienced surveyors ensure high-quality results for every project."
-    />
-    <meta
-      property="og:image"
-      content="https://calvada.com/images/logos/logo.png"
-    />
-
-    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/slideshow.css" />
-
-    <!-- External resources and header include -->
-    <!--#include virtual="header.html" -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   </head>
   <body>
     <!-- Header Section -->
-    <header>
-      <div class="slideshow-container">
-        <div class="mySlides fade">
-          <img src="images/header.jpg" style="width: 100%" />
-        </div>
-        <div class="mySlides fade">
-          <img src="images/three_pics.png" style="width:100%">
-        </div>
-        <div class="mySlides fade">
-          <img src="images/three_pics_2.png" style="width:100%">
-        </div>
-             
-        <!-- Navigation buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <!--#include virtual="header.html" -->
+    <header class="parallax-main" style="background-image: url('images/small-header.png')">
+      <div class="content" data-aos="fade-up">
+        <h1>Welcome to Calvada Surveying</h1>
+        <p>Your Trusted Partner in Land Surveying Services</p>
       </div>
     </header>
 
     <!-- Main Content Area -->
-    <main class="main">
-      <section class="introduction">
-        <h2>Welcome to Calvada Surveying</h2>
-        <p>Your Trusted Partner in Land Surveying Services</p>
-      </section>
-      
-      <!-- Services Description -->
-      <section class="services-description">
-        <p>
-          With over three decades of excellence in land surveying across
-          <strong>Arizona, California, Colorado, Nevada, and <a href="/locations.html">beyond</a></strong>,
-          Calvada Surveying is here to deliver precision and reliability for
-          your projects. Learn more <a href="/about.html">about us</a> and our commitment to quality. Discover how you can <a href="/careers.html">join our team</a> and contribute to our mission.
-        </p>
-      </section>
-
-      <hr>
-
+    <main>
       <!-- Detailed Services List -->
-      <section class="services-list">
-        <h2>Land Surveying Solutions We Offer</h2>
-        <ul>
-          <li>ALTA/NSPS Land Title Surveys</li>
-          <li>Topographic Surveys</li>
-          <li>Boundary Surveys</li>
-          <li>Construction Staking</li>
-          <li><a href="services.html">...more</a></li>
-        </ul>
+      <section class="parallax-main" style="background-image: url('images/three_pics.png')">
+        <div class="content" data-aos="fade-up">
+          <h2>Land Surveying Solutions We Offer</h2>
+          <ul>
+            <li>ALTA/NSPS Land Title Surveys</li>
+            <li>Topographic Surveys</li>
+            <li>Boundary Surveys</li>
+            <li>Construction Staking</li>
+            <li><a href="services.html">...more</a></li>
+          </ul>
+        </div>
       </section>
 
-      <hr />
+      <!-- Services Description -->
+      <section class="parallax-main" style="background-image: url('images/three_pics_2.png')">
+        <div class="content" data-aos="fade-up">
+          <p>
+            With over three decades of excellence in land surveying across
+            <strong>Arizona, California, Colorado, Nevada, and
+            <a href="/locations.html">beyond</a></strong>, Calvada Surveying is here to deliver precision and reliability
+            for your projects. Learn more <a href="/about.html">about us</a> and our commitment to quality. Discover how you can
+            <a href="/careers.html">join our team</a> and contribute to our mission.
+          </p>
+        </div>
+      </section>
 
       <!-- Call to Action -->
-      <section class="call-to-action">
-        <h2>Ready to Start Your Project?</h2>
-        <p>
-          Connect with our <a href="our-team.html">expert team</a> today and get your land surveying needs
-          handled with utmost professionalism and care.
-        </p>
-        <a href="contact.html">Contact Us</a>
+      <section class="parallax-main" style="background-image: url('images/add.jpg')">
+        <div class="content" data-aos="fade-up">
+          <h2>Ready to Start Your Project?</h2>
+          <p>
+            Connect with our <a href="our-team.html">expert team</a> today and
+            get your land surveying needs handled with utmost professionalism and care.
+          </p>
+          <a href="contact.html" class="button">Contact Us</a>
+        </div>
       </section>
     </main>
 
@@ -105,13 +66,14 @@
     <!--#include virtual="footer.html" -->
 
     <!-- Scripts -->
-    <script src="scripts/handle_slideshow.js"></script>
-    <script src="scripts/swipe_mobile.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      $(document).ready(function () {
-        $("body").addClass("support");
+      AOS.init({
+        duration: 1200,
       });
+    </script>
+    <script>
+      document.documentElement.style.scrollBehavior = "smooth";
     </script>
   </body>
 </html>

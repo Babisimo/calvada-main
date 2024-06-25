@@ -8,7 +8,10 @@
       name="description"
       content="Calvada Surveying, Inc. takes pride in offering various types of land surveying services including environmental survey, ALTA/ACSM land title surveys, and more. Contact us today!"
     />
+
     <link rel="icon" href="images/logos/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   </head>
   <!-- Header include -->
   <!--#include virtual="header.html" -->
@@ -24,8 +27,9 @@
 
     <!-- Main Content Area -->
     <main class="main">
-      <section class="homeBg">
-        <article class="mainCopy">
+      <!-- Parallax Section 1 -->
+      <section>
+        <div class="title-content" data-aos="fade-up">
           <h1>About Calvada Surveying</h1>
           <p>
             Founded in 1989, Calvada Surveying, Inc. is a distinguished Disabled
@@ -39,7 +43,12 @@
             >
             Explore our <a href="/locations.html">locations</a> to learn more.
           </p>
+        </div>
+      </section>
 
+      <!-- Regular Section -->
+      <section>
+        <div class="title-content" data-aos="fade-up">
           <h2>Our Mission</h2>
           <p>
             Calvada Surveying employs decades of expertise and cutting-edge
@@ -49,7 +58,11 @@
             longstanding reputation for excellence. Discover our comprehensive
             <a href="/services.html">services</a>.
           </p>
+        </div>
+      </section>
 
+      <section>
+        <div class="title-content" data-aos="fade-up">
           <h2>Our Vision</h2>
           <p>
             Our aim is to continue leading as a premier land surveying firm in
@@ -57,7 +70,11 @@
             projects and the communities we serve, while securing the future for
             our <a href="/careers.html">employees</a> and their families.
           </p>
+        </div>
+      </section>
 
+      <section>
+        <div class="title-content" data-aos="fade-up">
           <h2>Message from the President</h2>
           <p>
             Since its inception, Calvada Surveying, Inc. has established itself
@@ -65,10 +82,8 @@
             Telecommunications, Construction, and Environmental industries. We
             remain at the forefront of integrating advanced surveying
             technologies and uphold a client-focused approach to deliver
-            superior results and service. For any inquiries or project
-            discussions, please <a href="/contact.html">contact us</a>.
+            superior results and service. For any inquiries, please <a href="/contact.html">contact us</a>.
           </p>
-
           <p>
             Our team is equipped with the latest in surveying technology,
             including High-Definition Surveying (HDS) and drone surveying
@@ -76,31 +91,44 @@
             solutions to meet the unique needs of each project and ensure client
             satisfaction.
           </p>
-
           <p>
             With a committed team and a focus on technological innovation, we
             continue to advance our service offerings to meet and surpass the
             evolving demands of our clients.
           </p>
-
-          <p>Sincerely,</p>
-          <p>Armando Dupont</p>
-        </article>
+          <p>Sincerely, Armando Dupont</p>
+        </div>
       </section>
 
-      <hr />
+      <!-- Parallax Section 2 -->
+      <section>
+        <div class="title-content" data-aos="fade-up">
+          <h2>Our Commitment</h2>
+          <p>
+            At Calvada Surveying, Inc., we are committed to providing the
+            highest quality surveying services with a focus on accuracy,
+            reliability, and customer satisfaction. Our experienced team and
+            state-of-the-art technology ensure that we meet the unique needs of
+            each project.
+          </p>
+        </div>
+      </section>
 
-      <a href="/">Return to Home</a>.
+      <a href="/">Return to Home</a>
     </main>
 
     <!-- Footer Include -->
     <!--#include virtual="footer.html" -->
 
     <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      $(document).ready(function () {
-        $("body").addClass("support");
+      AOS.init({
+        duration: 1200,
       });
+    </script>
+    <script>
+      document.documentElement.style.scrollBehavior = "smooth";
     </script>
   </body>
 </html>

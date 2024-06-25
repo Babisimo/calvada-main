@@ -1,141 +1,166 @@
 /* CSS Variables for color scheme */
 :root {
-    --footer-background: #238d4f; /* Dark green background */
-    --footer-hover-background: #1c7430; /* Darker green for hover */
-    --text-color: #ffffff; /* White text color */
-    --hover-text-color: #adebad; /* Light green for hover and focus states */
+  --footer-background: #ffffffb7; /* Dark green background with 90% opacity */
+  --footer-hover-background: #b3b3b3b7; /* Darker green for hover with 90% opacity */
+  --text-color: #000000; /* White text color */
+  --hover-text-color: #365E32; /* Light green for hover and focus states */
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #212121;
+  overflow-x: hidden;
+  box-sizing: border-box; /* Ensure padding and borders are included within element widths */
+  background-color: #365E32;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 /* Base styling for footer */
 footer {
-    background-color: var(--footer-background);
-    color: var(--text-color);
-    padding: 15px;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-wrap: wrap;
-    max-width: 100%;
-    margin: auto;
-    max-height: 20rem;
+  background-color: var(--footer-background);
+  color: var(--text-color);
+  padding: 20px 10px; /* Reduced padding */
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: auto;
 }
 
-/* Each section styling */
 footer section {
-    flex: 1 1 200px; /* Allows each section to grow and shrink with a base width of 200px */
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 footer h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  font-size: 20px; /* Reduced font size */
+  margin-bottom: 5px; /* Reduced margin */
+  color: var(--text-color);
 }
 
-/* Styling for paragraphs and address in footer */
-footer p, footer address {
-    font-size: 14px;
-    line-height: 1.5;
+footer p,
+footer address {
+  font-size: 14px; /* Reduced font size */
+  line-height: 1.4;
+  margin: 0;
 }
 
-/* Link styling within the footer */
 footer a {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
-footer a:hover, footer a:focus {
-    color: var(--hover-text-color);
-    text-decoration: underline;
+footer a:hover,
+footer a:focus {
+  color: var(--hover-text-color);
+  text-decoration: underline;
 }
 
-/* Styling for social media links and images */
+/* Social media links */
 footer nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
 }
 
 footer nav a {
-    margin: 0 5px;
+  margin: 0 8px; /* Adjusted margin */
 }
 
 footer nav img {
-    width: 24px;
-    height: auto;
+  width: 24px; /* Reduced size */
+  height: auto;
 }
 
-/* Styling for copyright section */
+/* Copyright section */
 .copyright {
-    text-align: center;
-    background-color: var(--footer-hover-background);
-    color: var(--text-color);
-    padding: 10px 0;
-    font-size: 12px;
-    width: 100%;
+  text-align: center;
+  background-color: var(--footer-hover-background);
+  color: var(--text-color);
+  padding: 10px 0;
+  font-size: 12px; /* Reduced font size */
+  width: 100%;
 }
 
 .copyright a {
-    color: #adebad;
+  color: var(--text-color);
 }
 
-.copyright a:hover { 
-    color: #adebad;
+.copyright a:hover {
+  color: var(--hover-text-color);
+  text-decoration: underline;
 }
 
-@media (max-width: 768px) {
-    footer section {
-        flex: 1 0 100%; /* Flex shrink is set to 0, flex-basis to 100% */
-        margin: 10px 0;
-        padding: 0 5px; /* Ensure padding does not cause overflow */
-    }
-}
-
-
-@media (max-width: 480px) {
-    footer {
-        padding: 15px 5px; /* Reduce padding on very small screens */
-    }
-
-    footer h2 {
-        font-size: 14px; /* Even smaller headers for tiny displays */
-    }
-
-    footer p, footer address {
-        font-size: 12px; /* Smaller font size for compact display */
-    }
-
-    footer nav img {
-        width: 20px; /* Smaller icons for compact layout */
-    }
-}
-
-/* Styling for scroll to top link */
+/* Scroll to top link */
 a.scrollToTop {
-    text-align: center;
-    display: inline-block;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    background-color: var(--footer-background);
-    color: var(--text-color);
-    padding: 10px;
-    width: 40px;
-    border-radius: 50%;
-    text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-color: var(--footer-background);
+  color: var(--text-color);
+  padding: 4px; /* Reduced padding */
+  width: 36px; /* Reduced width */
+  height: 36px; /* Reduced height */
+  border-radius: 50%;
+  text-decoration: none;
+  display: none; /* Hidden by default */
 }
 
 a.scrollToTop:hover {
-    background-color: var(--footer-hover-background);
+  background-color: var(--footer-hover-background);
 }
 
-/* Ensures visibility of font awesome icon */
 .fa-chevron-up {
-    color: var(--text-color);
+  color: var(--text-color);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer section {
+    flex: 1 0 100%;
+    margin: 5px 0;
+    padding: 0 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 15px 5px; /* Slightly reduced padding on very small screens */
+  }
+
+  footer h2 {
+    font-size: 16px; /* Even smaller headers for tiny displays */
+  }
+
+  footer p,
+  footer address {
+    font-size: 12px; /* Smaller font size for compact display */
+  }
+
+  footer nav img {
+    width: 20px; /* Smaller icons for compact layout */
+  }
 }

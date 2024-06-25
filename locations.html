@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/magnific-popup.css" />
     <link rel="stylesheet" type="text/css" href="mapplic/mapplic.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <link rel="icon" href="images/logos/favicon.ico" type="image/x-icon" />
   </head>
   <body>
@@ -19,29 +20,32 @@
       <img src="images/header-support.jpg" alt="Support Header" />
     </div>
     <main class="main">
-      <h1>Locations</h1>
-      <p>
-        Our headquarters and primary place of mobilization is located in Corona,
-        CA. However, we proudly extend our surveying services across multiple
-        states, having successfully completed projects in Arizona, Texas,
-        Nevada, Oregon, Washington, Utah, and Idaho. No matter the location, we
-        are committed to providing precise and reliable land surveying services.
-      </p>
-      <p>
-        To learn more about our mission and values, visit our
-        <a href="about.html">about page</a>. Discover the full range of what we
-        offer on our <a href="services.html">services page</a> and stay updated
-        with our latest projects and company news on our
-        <a href="index.html">home page</a>. For any inquiries, visit our
-        <a href="contact.html">contact page</a>. Explore exciting career
-        opportunities on our <a href="careers.html">careers page</a> and get to
-        know the professionals behind our success on the
-        <a href="our-team.html">our team page</a>.
-      </p>
+      <section class="parallax">
+        <div class="title-content" data-aos="fade-up">
+          <h1>Locations</h1>
+          <p>
+            Our headquarters and primary place of mobilization is located in
+            Corona, CA. However, we proudly extend our surveying services across
+            multiple states, having successfully completed projects in Arizona,
+            Texas, Nevada, Oregon, Washington, Utah, and Idaho. No matter the
+            location, we are committed to providing precise and reliable land
+            surveying services.
+          </p>
+          <p>
+            To learn more about our mission and values, visit our
+            <a href="about.html">about page</a>. Discover the full range of what
+            we offer on our <a href="services.html">services page</a> and stay
+            updated with our latest projects and company news on our
+            <a href="index.html">home page</a>. For any inquiries, visit our
+            <a href="contact.html">contact page</a>. Explore exciting career
+            opportunities on our <a href="careers.html">careers page</a> and get
+            to know the professionals behind our success on the
+            <a href="our-team.html">our team page</a>.
+          </p>
+        </div>
+      </section>
 
-      <br/>
-
-      <div>
+      <div data-aos="fade-up">
         <article class="mainCopy">
           <section id="map-section" class="inner over">
             <div class="map-container">
@@ -51,6 +55,7 @@
           </section>
         </article>
       </div>
+      <a href="/">Return to Home</a>
     </main>
     <!--#include virtual="footer.html" -->
     <script>
@@ -79,6 +84,16 @@
           zoombuttons: false,
         });
       });
+    </script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1200,
+      });
+    </script>
+    <script>
+      document.documentElement.style.scrollBehavior = "smooth";
     </script>
   </body>
 </html>
