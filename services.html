@@ -8,10 +8,9 @@
       name="description"
       content="Calvada Surveying, Inc. takes pride in offering various types of land surveying services including environmental survey, ALTA/ACSM land title surveys, and more. Contact us today!"
     />
-
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/skeleton.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/services.css" />
     <link rel="icon" href="images/logos/favicon.ico" type="image/x-icon" />
   </head>
 
@@ -29,46 +28,96 @@
         <div class="title-content" data-aos="fade-up">
           <h1>Land Surveying Services</h1>
           <p>
-            Explore our comprehensive
-            <a href="/locations.html">locations</a> to see where we can serve
-            you.
+            Explore our comprehensive <a href="/locations.html">locations</a> to
+            see where we can serve you.
           </p>
         </div>
-        <section>
-          <div class="title-content" data-aos="fade-up">
-            <h2>Surveying and Mapping</h2>
-            <ul data-aos="fade-up">
+      </section>
+      <section class="services-section" data-aos="fade-up">
+        <div
+          class="service-card"
+          id="land-surveys-card"
+          onclick="toggleDetails('land-surveys-card')"
+        >
+          <h2>Land Surveys</h2>
+          <p>Explore our land surveying services.</p>
+          <div class="service-details">
+            <ul>
               <li>ALTA/NSPS Land Title Surveys</li>
-              <li>Aerial Topographic Surveys</li>
-              <li>As-Built Surveys</li>
               <li>Boundary Surveys</li>
               <li>Certificate of Compliance</li>
               <li>Condominium Maps</li>
-              <li>Construction Staking</li>
-              <li>Corner Records</li>
-              <li>Drone Surveys</li>
               <li>Easement Dedications</li>
               <li>Encumbrance Mapping</li>
-              <li>FEMA Elevation Certificates</li>
-              <li>High Definition Surveying (HDS)</li>
               <li>Legal Descriptions</li>
-              <li>LiDAR Scans</li>
               <li>Lot Line Adjustments</li>
               <li>Lot Mergers</li>
               <li>Parcel Mergers</li>
-              <li>Photogrammetry Control</li>
-              <li>Project Control Surveys</li>
-              <li>Right-of-Way Surveys</li>
               <li>Record of Surveys</li>
-              <li>Settlement Monitoring Surveys</li>
+              <li>Right-of-Way Surveys</li>
               <li>Subdivision Mapping</li>
               <li>Tentative Maps</li>
               <li>Topographic Surveys</li>
+              <li>Utility Surveys</li>
             </ul>
           </div>
-          <div class="title-content" data-aos="fade-up">
-            <h2>Telecommunication</h2>
-            <ul data-aos="fade-up">
+        </div>
+        <div
+          class="service-card"
+          id="design-surveys-card"
+          onclick="toggleDetails('design-surveys-card')"
+        >
+          <h2>Design Surveys</h2>
+          <p>Explore our design surveying services.</p>
+          <div class="service-details">
+            <ul>
+              <li>Aerial Topographic Surveys</li>
+              <li>As-Built Surveys</li>
+              <li>Drone Surveys</li>
+              <li>Construction Staking</li>
+              <li>FEMA Elevation Certificates</li>
+              <li>Project Control Surveys</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="service-card"
+          id="geodetic-control-surveys-card"
+          onclick="toggleDetails('geodetic-control-surveys-card')"
+        >
+          <h2>Geodetic Control Surveys</h2>
+          <p>Explore our geodetic control surveying services.</p>
+          <div class="service-details">
+            <ul>
+              <li>Corner Records</li>
+              <li>Photogrammetry Control</li>
+              <li>Settlement Monitoring Surveys</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="service-card"
+          id="lidar-services-card"
+          onclick="toggleDetails('lidar-services-card')"
+        >
+          <h2>LiDAR Services</h2>
+          <p>Explore our LiDAR surveying services.</p>
+          <div class="service-details">
+            <ul>
+              <li>LiDAR Scans</li>
+              <li>High Definition Surveying (HDS)</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="service-card"
+          id="telecommunication-card"
+          onclick="toggleDetails('telecommunication-card')"
+        >
+          <h2>Telecommunication</h2>
+          <p>Comprehensive telecommunication surveying services.</p>
+          <div class="service-details">
+            <ul>
               <li>1-A/2-C FAA Certification</li>
               <li>Height Verification Certifications</li>
               <li>Lease Area Legal Descriptions & Plats</li>
@@ -77,57 +126,77 @@
               <li>Site Walks</li>
             </ul>
           </div>
-          <div class="title-content" data-aos="fade-up">
-            <h2>Environmental</h2>
-            <ul data-aos="fade-up">
+        </div>
+        <div
+          class="service-card"
+          id="environmental-card"
+          onclick="toggleDetails('environmental-card')"
+        >
+          <h2>Environmental</h2>
+          <p>Specialized environmental surveying services.</p>
+          <div class="service-details">
+            <ul>
               <li>Surveys for GeoTracker Reporting</li>
-              <li>Location Staking (Monitoring Wells, Soil Boring Locations)</li>
+              <li>
+                Location Staking (Monitoring Wells, Soil Boring Locations)
+              </li>
               <li>Earthwork Volumes</li>
               <li>Site Plans</li>
             </ul>
           </div>
-        </section>
-        <section>
-          <div class="title-content" data-aos="fade-up">
-            <h2>Our Team</h2>
-            <p>
-              Meet the
-              <a href="/our-team.html">dedicated professionals</a> who ensure
-              quality and precision in all our surveying projects.
-            </p>
-          </div>
-        </section>
-        <section>
-          <div class="title-content" data-aos="fade-up">
-            <h2>Ready to Start Your Project?</h2>
-            <p>
-              Connect with our expert team today and get your land surveying
-              needs handled with utmost professionalism and care. Or
-              <a href="/careers.html">join our team</a> and help us continue to
-              provide excellent service.
-            </p>
-            <p><a href="contact.html">Contact Us</a></p>
-            <p>
-              Learn more about what sets us apart by visiting our
-              <a href="/about.html">About page</a>.
-            </p>
-          </div>
-        </section>
+        </div>
+      </section>
+      <section>
+        <div class="title-content" data-aos="fade-up">
+          <h2>Our Team</h2>
+          <p>
+            Meet the <a href="/our-team.html">dedicated professionals</a> who
+            ensure quality and precision in all our surveying projects.
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="title-content" data-aos="fade-up">
+          <h2>Ready to Start Your Project?</h2>
+          <p>
+            Connect with our expert team today and get your land surveying needs
+            handled with utmost professionalism and care. Or
+            <a href="/careers.html">join our team</a> and help us continue to
+            provide excellent service.
+          </p>
+          <p><a href="contact.html">Contact Us</a></p>
+          <p>
+            Learn more about what sets us apart by visiting our
+            <a href="/about.html">About page</a>.
+          </p>
+        </div>
       </section>
 
       <a href="/index.html">Return to Home</a>
     </main>
-  </body>
 
-  <!--#include virtual="footer.html" -->
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1200,
-    });
-  </script>
-  <script>
-    document.documentElement.style.scrollBehavior = "smooth";
-  </script>
+    <!--#include virtual="footer.html" -->
+    <!-- Scripts -->
+    <script src="js/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1200,
+      });
+    </script>
+    <script>
+      document.documentElement.style.scrollBehavior = "smooth";
+    </script>
+    <script>
+      function toggleDetails(id) {
+        const card = document.getElementById(id);
+        const allCards = document.querySelectorAll(".service-card");
+        allCards.forEach((c) => {
+          if (c.id !== id) {
+            c.classList.remove("open");
+          }
+        });
+        card.classList.toggle("open");
+      }
+    </script>
+  </body>
 </html>

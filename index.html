@@ -4,26 +4,31 @@
     <meta charset="utf-8" />
     <title>Calvada Surveying Inc | California Land Surveying Services</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Calvada Surveying, Inc. offers professional land surveying services including ALTA/NSPS surveys, boundary surveys, topographic mapping, and construction staking in California, Arizona, Nevada, Colorado, and Washington. Trusted for precision and reliability, our experienced surveyors ensure high-quality results for every project." />
+    <meta
+      name="description"
+      content="Calvada Surveying, Inc. offers professional land surveying services including ALTA/NSPS surveys, boundary surveys, topographic mapping, and construction staking in California, Arizona, Nevada, Colorado, and Washington. Trusted for precision and reliability, our experienced surveyors ensure high-quality results for every project."
+    />
     <link rel="icon" href="images/logos/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/slideshow.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link
+      rel="stylesheet"
+      href="css/aos.css"
+      media="print"
+      onload="this.onload=null;this.removeAttribute('media');"
+    />
+    <noscript><link rel="stylesheet" href="css/aos.css" /></noscript>
   </head>
   <body>
     <!-- Header Section -->
     <!--#include virtual="header.html" -->
-    <header class="parallax-main" style="background-image: url('images/small-header.png')">
-      <div class="content" data-aos="fade-up">
-        <h1>Welcome to Calvada Surveying</h1>
-        <p>Your Trusted Partner in Land Surveying Services</p>
-      </div>
+    <header class="parallax-main" data-bg="images/small-header.png">
+      <div class="content-top" data-aos="fade-up"></div>
     </header>
 
     <!-- Main Content Area -->
     <main>
       <!-- Detailed Services List -->
-      <section class="parallax-main" style="background-image: url('images/three_pics.png')">
+      <section class="parallax-main" data-bg="images/three-pics.png">
         <div class="content" data-aos="fade-up">
           <h2>Land Surveying Solutions We Offer</h2>
           <ul>
@@ -37,25 +42,30 @@
       </section>
 
       <!-- Services Description -->
-      <section class="parallax-main" style="background-image: url('images/three_pics_2.png')">
+      <section class="parallax-main" data-bg="images/three-pics-2.png">
         <div class="content" data-aos="fade-up">
           <p>
             With over three decades of excellence in land surveying across
-            <strong>Arizona, California, Colorado, Nevada, and
-            <a href="/locations.html">beyond</a></strong>, Calvada Surveying is here to deliver precision and reliability
-            for your projects. Learn more <a href="/about.html">about us</a> and our commitment to quality. Discover how you can
-            <a href="/careers.html">join our team</a> and contribute to our mission.
+            <strong
+              >Arizona, California, Colorado, Nevada, and
+              <a href="/locations.html">beyond</a></strong
+            >, Calvada Surveying is here to deliver precision and reliability
+            for your projects. Learn more <a href="/about.html">about us</a> and
+            our commitment to quality. Discover how you can
+            <a href="/careers.html">join our team</a> and contribute to our
+            mission.
           </p>
         </div>
       </section>
 
       <!-- Call to Action -->
-      <section class="parallax-main" style="background-image: url('images/add.jpg')">
+      <section class="parallax-main" data-bg="images/project-example.png">
         <div class="content" data-aos="fade-up">
           <h2>Ready to Start Your Project?</h2>
           <p>
             Connect with our <a href="our-team.html">expert team</a> today and
-            get your land surveying needs handled with utmost professionalism and care.
+            get your land surveying needs handled with utmost professionalism
+            and care.
           </p>
           <a href="contact.html" class="button">Contact Us</a>
         </div>
@@ -66,14 +76,37 @@
     <!--#include virtual="footer.html" -->
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 1200,
+    <script src="js/aos.js" defer></script>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.init({
+          duration: 1200,
+        });
       });
-    </script>
-    <script>
+
       document.documentElement.style.scrollBehavior = "smooth";
+    </script>
+    <script src="js/lazyload.js" defer></script>
+    <script defer>
+      document.addEventListener("DOMContentLoaded", function () {
+        const lazyBackgrounds = document.querySelectorAll(".parallax-main");
+
+        const lazyLoad = (target) => {
+          const obs = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const bg = entry.target;
+                const bgImage = bg.getAttribute("data-bg");
+                bg.style.backgroundImage = `url(${bgImage})`;
+                observer.disconnect();
+              }
+            });
+          });
+          obs.observe(target);
+        };
+
+        lazyBackgrounds.forEach(lazyLoad);
+      });
     </script>
   </body>
 </html>

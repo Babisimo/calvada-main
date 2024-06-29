@@ -1,0 +1,73 @@
+/* services.css */
+
+.services-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.service-card {
+  background: #ffffff;
+  color: #365E32;
+  border: 1px solid #ffffff00;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+  width: 30%;
+  cursor: pointer;
+  transition: transform 0.3s, max-height 0.3s, height 0.3s;
+  overflow: hidden;
+  max-height: 200px; /* Initial height for non-expanded state */
+}
+
+.service-card.open {
+  max-height: none; /* Remove max-height constraint */
+  height: auto; /* Let the card expand to fit the content */
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 27px 4px rgba(0, 0, 0, 0.64);
+}
+
+.service-card h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+
+.service-card p {
+  color: #b4b4b4;
+  margin-bottom: 10px;
+}
+
+.service-details {
+  display: none;
+  margin-top: 10px;
+}
+
+.service-card.open .service-details {
+  display: block;
+}
+
+.service-details ul {
+  padding-left: 20px;
+}
+
+.service-details ul li {
+  margin-bottom: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .service-card {
+    width: 45%; /* Two cards per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    width: 100%; /* One card per row */
+  }
+}

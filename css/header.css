@@ -2,6 +2,7 @@
 body,
 html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0; /* Remove default margin */
 }
 
 .header {
@@ -14,14 +15,15 @@ html {
   z-index: 1000;
   display: flex;
   align-items: center; /* Ensures vertical centering of child elements */
-  
+  justify-content: space-between; /* Distribute space between logo and navigation */
+  padding: 0 20px; /* Add some padding to the sides */
 }
 
 .logo {
-  height: 60px; /* Adjust based on your logo */
+  height: 40px; /* Adjust based on your logo */
   width: auto;
-  padding: 10px 20px;
   display: block; /* Ensure the logo is a block level element for proper spacing */
+  margin: 10px
 }
 
 /* Navigation Container */
@@ -30,11 +32,14 @@ html {
   justify-content: flex-end;
   align-items: center;
   flex-grow: 1; /* Takes up remaining space to push nav to the right */
+  position: relative; /* Ensure proper positioning of the hamburger icon */
 }
 
 /* Styling for navigation menu */
 nav {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .navigation {
@@ -52,7 +57,7 @@ nav {
 
 .navigation a {
   text-decoration: none;
-  color: #333; /* Change the color as needed */
+  color: #365E32;
   font-weight: bold;
 }
 
@@ -80,27 +85,92 @@ input[type="checkbox"] {
   display: none;
   font-size: 30px;
   cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 20px;
 }
 
 /* Mobile optimization */
 @media (max-width: 768px) {
   .navContainer {
     flex-direction: column;
+    align-items: center; /* Center contents horizontally */
+    width: 100%;
   }
 
   .show-menu {
     display: block;
-    padding: 10px;
+    position: relative; /* Change to relative for proper alignment */
+    margin-left: auto; /* Push to the right */
   }
 
   #menu {
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Center menu items */
     width: 100%;
     display: none; /* Hidden by default */
   }
 
-  input[type="checkbox"]:checked + .show-menu + .navigation {
+  input[type="checkbox"]:checked ~ nav #menu {
     display: flex; /* Show menu when checkbox is checked */
+  }
+
+  .navigation {
+    flex-direction: column;
+    align-items: center; /* Center menu items */
+    width: 100%;
+  }
+
+  .navigation li {
+    width: 100%;
+  }
+
+  .navigation a {
+    width: 100%;
+    display: block;
+    padding: 10px 20px;
+    text-align: center; /* Center text */
+  }
+}
+
+@media (max-width: 320px) {
+  .navContainer {
+    flex-direction: column;
+    align-items: center; /* Center contents horizontally */
+    width: 100%;
+  }
+
+  .show-menu {
+    display: block;
+    position: relative; /* Change to relative for proper alignment */
+    margin-left: auto; /* Push to the right */
+  }
+
+  #menu {
+    flex-direction: column;
+    align-items: center; /* Center menu items */
+    width: 100%;
+    display: none; /* Hidden by default */
+  }
+
+  input[type="checkbox"]:checked ~ nav #menu {
+    display: flex; /* Show menu when checkbox is checked */
+  }
+
+  .navigation {
+    flex-direction: column;
+    align-items: center; /* Center menu items */
+    width: 100%;
+  }
+
+  .navigation li {
+    width: 100%;
+  }
+
+  .navigation a {
+    width: 100%;
+    display: block;
+    padding: 10px 10px;
+    text-align: center; /* Center text */
   }
 }

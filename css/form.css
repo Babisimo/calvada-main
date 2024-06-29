@@ -1,0 +1,179 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #212121;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background-color: #365E32;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+header,
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+header img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.main {
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.75em;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+a {
+  color: #FD9B63;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.supportHeader img {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form .formFields {
+  margin-bottom: 20px;
+}
+
+form .formFields input[type="text"],
+form .formFields input[type="email"],
+form .formFields input[type="tel"],
+form .formFields textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+form .formFields input[type="submit"] {
+  background: #365e32;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  transition: background 0.3s ease;
+}
+
+form .formFields input[type="submit"]:hover {
+  background: #579551;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 40px 0;
+}
+
+address {
+  font-style: normal;
+  margin-bottom: 40px;
+}
+
+address p {
+  margin: 10px 0;
+}
+
+.parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 20px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #365e32bc;
+  padding: 40px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.g-recaptcha {
+    display: inline-block;    
+}
+
+@media (max-width: 768px) {
+  .supportHeader img {
+    width: 100%;
+    height: auto;
+  }
+
+  .parallax {
+    background-attachment: local;
+    padding: 50px 20px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.75em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  p,
+  ul li {
+    font-size: 1em;
+  }
+}

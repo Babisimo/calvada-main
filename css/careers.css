@@ -1,108 +1,184 @@
-body {
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ffffff;
+  overflow-x: hidden;
+  box-sizing: border-box; /* Ensure padding and borders are included within element widths */
+  background-color: #365E32;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+header,
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+header img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.main {
+  padding: 20px;
+  text-align: center;
+}
+
+h1,
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+
+a {
+  color: #FD9B63;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .supportHeader img {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
 }
 
-.career-opportunities, .current-openings {
-    margin-bottom: 20px;
+hr {
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 40px 0;
 }
 
-h2 {
-    color: #0275d8;
+.parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 20px 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.job-listings {
-    list-style-type: none;
-    padding: 0;
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #365e32bc;
+  padding: 40px;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 
-.job-listings li {
-    background: #e9ecef;
-    margin-bottom: 5px;
-    padding: 10px;
-    border-radius: 5px;
+.title-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  color: white;
+  /* background: #81a263; */
 }
 
-.job-listings a {
-    text-decoration: none;
-    color: #333;
+.career-opportunities article,
+.current-openings article {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #00000020;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 2rem;
 }
 
 .position-details summary {
-    font-weight: bold;
-    cursor: pointer;
+  cursor: pointer;
+  font-size: 1.5em;
+  margin-bottom: 10px;
 }
 
 .position-details .job-description {
-    padding: 10px;
-    background-color: #e9ecef;
-    border-radius: 5px;
-    margin-top: 5px;
+  background: #ffffff10;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-details[open] summary ~ * {
-    animation: slideDown 0.3s ease-in-out;
-}
-
-@keyframes slideDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive media queries */
-@media (max-width: 992px) {
-    header, main, footer {
-        padding: 10px;
-    }
-
-    .main {
-        padding: 15px;
-    }
+.position-details .job-description p,
+.position-details .job-description ul li {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #ffffff;
+  list-style: inside;
 }
 
 @media (max-width: 768px) {
-    header, main, footer {
-        padding: 5px;
-    }
 
-    .main {
-        padding: 10px;
-    }
+  .supportHeader img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .parallax {
+    background-attachment: local;
+    padding: 50px 20px;
+  }
 
-    .job-listings li {
-        padding: 8px;
-    }
-}
+  .content {
+    padding: 20px;
+  }
 
-@media (max-width: 576px) {
-    header, main, footer {
-        padding: 0;
-    }
+  h1,
+  h2 {
+    font-size: 1.5em;
+  }
 
-    .main {
-        padding: 5px;
-    }
+  p,
+  ul li {
+    font-size: 1em;
+  }
 
-    h2 {
-        font-size: 1.5em; /* Reduce the size of H2 elements on small screens */
-    }
+  .call-to-action a {
+    padding: 10px 15px;
+  }
 
-    .job-listings li {
-        padding: 5px;
-    }
+  .career-opportunities article,
+  .current-openings article {
+    padding: 10px;
+  }
+
+  .position-details summary {
+    font-size: 1.25em;
+  }
+
+  .position-details .job-description {
+    padding: 5px;
+  }
+
+  .position-details .job-description p,
+  .position-details .job-description ul li {
+    font-size: 0.9em;
+  }
 }

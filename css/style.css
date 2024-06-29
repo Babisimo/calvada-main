@@ -5,7 +5,7 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #212121;
+  color: #ffffff;
   overflow-x: hidden;
   box-sizing: border-box; /* Ensure padding and borders are included within element widths */
   background-color: #365E32;
@@ -15,6 +15,21 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 header,
@@ -41,16 +56,6 @@ header img {
   margin-bottom: 40px;
 }
 
-h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-p {
-  font-size: 1.2em;
-  line-height: 1.6;
-}
-
 a {
   color: #FD9B63;
   text-decoration: none;
@@ -60,9 +65,8 @@ a:hover {
   text-decoration: underline;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+.supportHeader img {
+  width: 100%;
 }
 
 .content ul li {
@@ -104,13 +108,12 @@ hr {
   text-align: center;
   padding: 20px 20px;
   width: 100%;
-  box-sizing: border-box;
 }
 
-.parallax-main{
+.parallax-main {
   position: relative;
-  background-attachment: fixed;
   background-size: cover;
+  background-attachment: fixed;
   background-position: center;
   color: white;
   text-align: center;
@@ -119,7 +122,7 @@ hr {
   box-sizing: border-box;
 }
 
-.parallax-element{
+.parallax-element {
   color: white;
 }
 
@@ -130,23 +133,30 @@ hr {
   padding: 40px;
   border-radius: 10px;
   box-sizing: border-box;
+}
 
+.content-top {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 90px;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 
 .title-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 10px;
   border-radius: 10px;
   margin-bottom: 2rem;
   color: white;
-  /* background: #81a263; */
 }
-
 
 @media (max-width: 768px) {
 
   .supportHeader img {
+    max-width: 100%;
+  } img {
     width: 100%;
     height: auto;
   }
@@ -154,6 +164,11 @@ hr {
   .parallax {
     background-attachment: local;
     padding: 50px 20px;
+  }
+
+  .parallax-main {
+    background-attachment: local;
+
   }
 
   .content {
