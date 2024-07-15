@@ -152,6 +152,23 @@ hr {
   color: white;
 }
 
+header {
+  position: relative;
+}
+
+header .logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header .logo-container img {
+  width: 100%; /* Makes the logo responsive */
+  max-width: 60rem; /* Adjusts the max width as necessary */
+  height: auto;
+}
+
 @media (max-width: 768px) {
 
   .supportHeader img {
@@ -168,7 +185,6 @@ hr {
 
   .parallax-main {
     background-attachment: local;
-
   }
 
   .content {
@@ -186,5 +202,9 @@ hr {
 
   .call-to-action a {
     padding: 10px 15px;
+  }
+
+  header .logo-container img {
+    max-width: 25rem; /* Adjust the size for smaller screens */
   }
 }
