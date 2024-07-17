@@ -1,6 +1,5 @@
 <?php
 if (!isset($_POST['Submit'])) {
-  // This page should not be accessed directly. Need to submit the form.
   echo "error; you need to submit the form!";
   exit;
 }
@@ -9,26 +8,37 @@ $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
 $phone = filter_var($_POST['phone'], FILTER_SANITIZE_STRING);
 $visitor_email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
+$honeypot = $_POST['honeypot'];
+$timestamp = $_POST['timestamp'];
+$current_time = time();
 
-// Validate first
-if (trim($name) == '') {
+// Honeypot validation
+if (!empty($honeypot)) {
+  echo "error; suspicious activity detected!";
+  exit;
+}
+
+// Timestamp validation
+if (($current_time - $timestamp) < 5) {
+  echo "error; form submitted too quickly!";
+  exit;
+}
+
+// Validate required fields
+if (trim($name) == '' || trim($phone) == '' || trim($message) == '' || trim($visitor_email) == '') {
   echo "all fields are mandatory";
   exit;
 }
-if (trim($phone) == '') {
-  echo "all fields are mandatory";
-  exit;
-}
-if (trim($message) == '') {
-  echo "all fields are mandatory";
-  exit;
-}
-if (trim($visitor_email) == '') {
-  echo "all fields are mandatory";
-  exit;
-}
+
+// Validate email
 if (IsInjected($visitor_email)) {
   echo "Bad email value!";
+  exit;
+}
+
+// Check for spam keywords
+if (containsSpamKeywords($message)) {
+  echo "error; spam content detected!";
   exit;
 }
 
@@ -44,20 +54,19 @@ if (intval($response_keys["success"]) !== 1) {
   exit;
 }
 
-$email_from = 'noreply@calvada.com'; // <== update the email address
+$email_from = 'noreply@calvada.com'; 
 $email_subject = "Email From Calvada.com";
 $email_body = "Name: $name\n" .
   "Phone: $phone\n" .
   "E-mail: $visitor_email\n" .
   "Message: $message\n";
 
-//$to = "adupont@calvada.com,gfong@calvada.com,rgonzalez@calvada.com"; //<== update the email address
-$to = "ogonzalez@calvada.com";
+$to = "adupont.jr@calvada.com,gfong@calvada.com,rgonzalez@calvada.com,ogonzalez@calvada.com";
 $headers = "From: $email_from \r\n";
 $headers .= "Reply-To: $visitor_email \r\n";
-// Send the email!
+
 mail($to, $email_subject, $email_body, $headers);
-// done. redirect to thank-you page.
+
 header('Location: thank-you.html');
 
 // Function to validate against any email injection attempts
@@ -81,4 +90,33 @@ function IsInjected($str)
   }
 }
 
+// Function to check for spam keywords
+function containsSpamKeywords($message)
+{
+  $spam_keywords = array(
+    'купить',
+    'кокаин',
+    'мефедрон',
+    'Москва',
+    'химмед',
+    'casino',
+    'gambling',
+    'roulette',
+    'plumber',
+    'сантехника',
+    'seo',
+    'plumber in san jose',
+    'cyclopropanecarboxylic acid',
+    'diphenyl disulfide',
+    '4-chlorobenzoylacetonitrile',
+    '7-chloro-5-methyl 1,2,4 triazolo 4,3-c pyrimidine'
+  );
+  
+  foreach ($spam_keywords as $keyword) {
+    if (stripos($message, $keyword) !== false) {
+      return true;
+    }
+  }
+  return false;
+}
 ?>

@@ -15,8 +15,25 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- Header include -->
-    <!--#include virtual="header.html" -->
   </head>
+
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-7ZW4S5V9Y2"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-7ZW4S5V9Y2");
+  </script>
+  
+  <!--#include virtual="header.html" -->
+
   <body>
     <!-- Support Header Image -->
     <div class="supportHeader">
@@ -84,6 +101,18 @@
               <div class="formFields">
                 <input type="submit" name="Submit" value="Submit" />
               </div>
+              <input
+                type="text"
+                id="honeypot"
+                name="honeypot"
+                style="display: none"
+              />
+              <input
+                type="hidden"
+                id="timestamp"
+                name="timestamp"
+                value="<?php echo time(); ?>"
+              />
             </form>
           </section>
         </article>
