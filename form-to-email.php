@@ -42,6 +42,12 @@ if (containsSpamKeywords($message)) {
   exit;
 }
 
+// Check for URLs in the message
+if (containsUrl($message)) {
+  echo "error; no links allowed in the message!";
+  exit;
+}
+
 // Verify reCAPTCHA
 $recaptcha_secret = '6LcCNgEqAAAAAFYg3iOojgGJolOmVodtfT95swu2';
 $recaptcha_response = $_POST['g-recaptcha-response'];
@@ -54,7 +60,7 @@ if (intval($response_keys["success"]) !== 1) {
   exit;
 }
 
-$email_from = 'noreply@calvada.com'; 
+$email_from = 'noreply@calvada.com';
 $email_subject = "Email From Calvada.com";
 $email_body = "Name: $name\n" .
   "Phone: $phone\n" .
@@ -109,9 +115,11 @@ function containsSpamKeywords($message)
     'cyclopropanecarboxylic acid',
     'diphenyl disulfide',
     '4-chlorobenzoylacetonitrile',
-    '7-chloro-5-methyl 1,2,4 triazolo 4,3-c pyrimidine'
+    '7-chloro-5-methyl 1,2,4 triazolo 4,3-c pyrimidine',
+    'methyl',
+    'internet-magazine'
   );
-  
+
   foreach ($spam_keywords as $keyword) {
     if (stripos($message, $keyword) !== false) {
       return true;
@@ -119,4 +127,17 @@ function containsSpamKeywords($message)
   }
   return false;
 }
+
+// Function to check for URLs in the message
+function containsUrl($message)
+{
+  // Regular expression to match URLs
+  $url_pattern = '/\b(?:https?:\/\/|www\.)\S+\b/i';
+
+  if (preg_match($url_pattern, $message)) {
+    return true;
+  }
+  return false;
+}
+
 ?>
