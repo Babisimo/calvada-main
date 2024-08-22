@@ -34,6 +34,7 @@ ul {
 
 .supportHeader img {
   width: 100%;
+  filter: drop-shadow(2px -15px 66px #000000);
 }
 
 header,

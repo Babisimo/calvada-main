@@ -23,8 +23,8 @@
 }
 
 .service-card.open {
-  max-height: none; /* Remove max-height constraint */
-  height: auto; /* Let the card expand to fit the content */
+  max-height: none;
+  height: auto;
 }
 
 .service-card:hover {
@@ -49,10 +49,6 @@
 
 .service-card.open .service-details {
   display: block;
-}
-
-.service-details ul {
-  padding-left: 20px;
 }
 
 .service-details ul li {

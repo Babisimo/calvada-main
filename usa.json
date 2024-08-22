@@ -201,12 +201,12 @@
 					"y": "0.4450"
 				},
 				{
-					"id": "id",
-					"title": "Idaho",
+					"id": "ne",
+					"title": "Nebraska",
 					"pin": "hidden no-fill",
 					"action": "disabled",
-					"x": "0.2000",
-					"y": "0.2450"
+					"x": "0.4500",
+					"y": "0.4000"
 				}
 			]
 		}

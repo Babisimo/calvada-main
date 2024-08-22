@@ -117,8 +117,17 @@ function containsSpamKeywords($message)
     '4-chlorobenzoylacetonitrile',
     '7-chloro-5-methyl 1,2,4 triazolo 4,3-c pyrimidine',
     'methyl',
-    'internet-magazine'
-  );
+    'internet-magazine',
+    'отилор',
+    'цена',
+    'ташкент',
+    'Ты',
+    'жизни',
+    'Симферополе',
+    'жителей',
+    'Министр',
+    'и'
+);
 
   foreach ($spam_keywords as $keyword) {
     if (stripos($message, $keyword) !== false) {
