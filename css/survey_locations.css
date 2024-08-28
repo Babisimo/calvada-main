@@ -1,0 +1,182 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ffffff;
+  overflow-x: hidden;
+  box-sizing: border-box; /* Ensure padding and borders are included within element widths */
+  background-color: #365e32;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+header,
+main {
+  width: 100%;
+  /* margin: 0 auto; */
+}
+
+header img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.main {
+  padding: 20px;
+}
+
+.rth {
+  text-align: center;
+}
+
+.main h1 {
+  text-align: center;
+}
+
+address a {
+    color: white;
+}
+
+a {
+  color: #fd9b63;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.supportHeader img {
+  width: 100%;
+  filter: drop-shadow(2px -15px 66px #000000);
+}
+
+.title-content ul li {
+  list-style: inside;
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 40px 0;
+}
+
+.call-to-action a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background: #007bff;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.call-to-action a:hover {
+  background: #0056b3;
+}
+
+.parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 20px 20px;
+  width: 100%;
+}
+
+.parallax-element {
+  color: white;
+}
+
+.title-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+header {
+  position: relative;
+}
+
+header .logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header .logo-container img {
+  width: 100%; /* Makes the logo responsive */
+  max-width: 60rem; /* Adjusts the max width as necessary */
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .supportHeader img {
+    max-width: 100%;
+  }
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .parallax {
+    background-attachment: local;
+    padding: 50px 20px;
+  }
+
+  .parallax-main {
+    background-attachment: local;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  p,
+  ul li {
+    font-size: 1em;
+  }
+
+  .call-to-action a {
+    padding: 10px 15px;
+  }
+
+  header .logo-container img {
+    max-width: 25rem; /* Adjust the size for smaller screens */
+  }
+}
