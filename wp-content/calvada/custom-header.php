@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
   <!-- Mobile Specific Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="/css/header.css" />
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+</head>
 
+<body>
   <!-- Primary Page Layout -->
-
   <header>
     <div class="header">
-      <a href="/index.html"
-        ><img src="/images/logos/logo.png" alt="Logo of Calvada" class="logo"
-      /></a>
+      <a href="/index.html"><img src="/images/logos/logo.png" alt="Logo of Calvada" class="logo"/></a>
       <div class="navContainer">
         <input type="checkbox" id="menu-toggle" />
         <label for="menu-toggle" class="show-menu">&#9776;</label>
@@ -36,4 +36,5 @@
       </div>
     </div>
   </header>
+</body>
 </html>
