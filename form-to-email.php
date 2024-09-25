@@ -6,10 +6,11 @@ if (!isset($_POST['Submit'])) {
     exit;
 }
 
-$name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
-$phone = filter_var($_POST['phone'], FILTER_SANITIZE_STRING);
 $visitor_email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-$message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
+$name = trim(strip_tags($_POST['name']));
+$phone = trim(strip_tags($_POST['phone']));
+$message = trim(strip_tags($_POST['message']));
+
 $honeypot = $_POST['honeypot'];
 $timestamp = (int) $_POST['timestamp']; // Cast timestamp to integer
 $current_time = time();
@@ -50,6 +51,12 @@ if (containsUrl($message)) {
     exit;
 }
 
+// Validate email format
+if (!filter_var($visitor_email, FILTER_VALIDATE_EMAIL)) {
+    echo "Invalid email format!";
+    exit;
+}
+
 // Verify reCAPTCHA
 $recaptcha_secret = '6LcCNgEqAAAAAFYg3iOojgGJolOmVodtfT95swu2';
 $recaptcha_response = $_POST['g-recaptcha-response'];
@@ -76,22 +83,22 @@ $headers .= "Reply-To: $visitor_email \r\n";
 mail($to, $email_subject, $email_body, $headers);
 
 // Save to XLSX
-$file_path = 'contact_submissions.xlsx';
+// $file_path = 'contact_submissions.xlsx';
 
-if (file_exists($file_path)) {
-    $xlsx = \Shuchkin\SimpleXLSXGen::fromFile($file_path);
-    $sheet_data = $xlsx->rows();
-    $sheet_data[] = [$name, $phone, $visitor_email, $message, date("Y-m-d H:i:s", $current_time)];
-    $xlsx = \Shuchkin\SimpleXLSXGen::fromArray($sheet_data);
-} else {
-    $xlsx = new \Shuchkin\SimpleXLSXGen();
-    $xlsx->addSheet([['Name', 'Phone', 'Email', 'Message', 'Timestamp'], [$name, $phone, $visitor_email, $message, date("Y-m-d H:i:s", $current_time)]], 'Sheet1');
-}
+// if (file_exists($file_path)) {
+//     $xlsx = \Shuchkin\SimpleXLSXGen::fromFile($file_path);
+//     $sheet_data = $xlsx->rows();
+//     $sheet_data[] = [$name, $phone, $visitor_email, $message, date("Y-m-d H:i:s", $current_time)];
+//     $xlsx = \Shuchkin\SimpleXLSXGen::fromArray($sheet_data);
+// } else {
+//     $xlsx = new \Shuchkin\SimpleXLSXGen();
+//     $xlsx->addSheet([['Name', 'Phone', 'Email', 'Message', 'Timestamp'], [$name, $phone, $visitor_email, $message, date("Y-m-d H:i:s", $current_time)]], 'Sheet1');
+// }
 
-$xlsx->saveAs($file_path);
+// $xlsx->saveAs($file_path);
 
 
-header('Location: thank-you.html');
+header('Location: /thank-you.html');
 
 // Function to validate against any email injection attempts
 function IsInjected($str)

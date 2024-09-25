@@ -9,6 +9,14 @@
       content="Calvada Surveying, Inc is established in 1989 and offers superior 3D surveying, boundary surveys, ALTA/NSPS Survey services for Northern California, Southern California, Colorado, Nevada, Oregon, Washington and Arizona."
     />
 
+    <!-- Prevent caching -->
+    <meta
+      http-equiv="Cache-Control"
+      content="no-store, no-cache, must-revalidate, max-age=0"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
     <link rel="stylesheet" href="css/form.css" />
     <link rel="stylesheet" href="css/aos.css" />
     <link rel="icon" href="images/logos/favicon.ico" type="image/x-icon" />
@@ -32,7 +40,7 @@
     gtag("config", "G-7ZW4S5V9Y2");
   </script>
 
-  <!--#include virtual="header.html" -->
+  <!--#include virtual="/header.html" -->
 
   <body>
     <!-- Support Header Image -->
@@ -122,7 +130,7 @@
     </main>
 
     <!-- Footer Include -->
-    <!--#include virtual="footer.html" -->
+    <!--#include virtual="/footer.html" -->
 
     <!-- Scripts -->
     <script src="js/aos.js"></script>
@@ -133,6 +141,18 @@
     </script>
     <script>
       document.documentElement.style.scrollBehavior = "smooth";
+    </script>
+    
+    <script>
+      window.addEventListener("pageshow", function (event) {
+        if (
+          event.persisted ||
+          (window.performance && window.performance.navigation.type === 2)
+        ) {
+          // The page was restored from the bfcache or navigated back
+          document.getElementById("contactform").reset();
+        }
+      });
     </script>
   </body>
 </html>
