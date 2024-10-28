@@ -1,0 +1,211 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ffffff;
+  overflow-x: hidden;
+  box-sizing: border-box; /* Ensure padding and borders are included within element widths */
+  background-color: #365E32;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+header,
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+header img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.main {
+  padding: 20px;
+  text-align: center;
+}
+
+.introduction,
+.services-description,
+.services-list,
+.call-to-action {
+  margin-bottom: 40px;
+}
+
+a {
+  color: #FD9B63;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.supportHeader img {
+  width: 100%;
+  filter: drop-shadow(2px -15px 66px #000000);
+}
+
+.content ul li {
+  font-size: 1.2em;
+}
+
+.title-content ul li {
+  line-height: 1.6;
+  font-size: 1.2em;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 40px 0;
+}
+
+.call-to-action a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background: #007bff;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.call-to-action a:hover {
+  background: #0056b3;
+}
+
+.parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 20px 20px;
+  width: 100%;
+}
+
+.parallax-main {
+  position: relative;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.parallax-element {
+  color: white;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #365e32bc;
+  padding: 40px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.content-top {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 90px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.title-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+header {
+  position: relative;
+}
+
+header .logo-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header .logo-container img {
+  width: 100%; /* Makes the logo responsive */
+  max-width: 60rem; /* Adjusts the max width as necessary */
+  height: auto;
+}
+
+@media (max-width: 768px) {
+
+  .supportHeader img {
+    max-width: 100%;
+  } img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .parallax {
+    background-attachment: local;
+    padding: 50px 20px;
+  }
+
+  .parallax-main {
+    background-attachment: local;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  p,
+  ul li {
+    font-size: 1em;
+  }
+
+  .call-to-action a {
+    padding: 10px 15px;
+  }
+
+  header .logo-container img {
+    max-width: 25rem; /* Adjust the size for smaller screens */
+  }
+}

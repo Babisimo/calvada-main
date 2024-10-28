@@ -1,8 +1,25 @@
 <?php
-require './libs/simplexlsxgen-1.4.12/src/SimpleXLSXGen.php'; // Include the SimpleXLSXGen library
+require './libs/vendor/autoload.php'; // Composer autoloader (for PHPMailer installed via Composer)
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 if (!isset($_POST['Submit'])) {
     echo "error; you need to submit the form!";
+    exit;
+}
+
+// Capture the reCAPTCHA response from the form
+$recaptcha_secret = '6Le4_WkqAAAAAJMr8X82D1GjfC4mZHb172XEpNIh'; // Use the secret key from reCAPTCHA admin console
+$recaptcha_response = $_POST['g-recaptcha-response'];
+
+// Verify the reCAPTCHA response
+$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptcha_secret&response=$recaptcha_response");
+$response_keys = json_decode($response, true);
+
+// Check if the reCAPTCHA is valid and the score is above a certain threshold (0.5 is a common threshold)
+if (!$response_keys['success'] || $response_keys['score'] < 0.5) {
+    echo "Error: reCAPTCHA verification failed. Please try again.";
     exit;
 }
 
@@ -12,95 +29,90 @@ $phone = trim(strip_tags($_POST['phone']));
 $message = trim(strip_tags($_POST['message']));
 
 $honeypot = $_POST['honeypot'];
-$timestamp = (int) $_POST['timestamp']; // Cast timestamp to integer
+$timestamp = (int) $_POST['timestamp'];
 $current_time = time();
 
-// Honeypot validation
-if (!empty($honeypot)) {
+if (!preg_match('/^\+?[0-9]{10,15}$/', $phone)) {
+    echo "Invalid phone number!";
+    exit;
+}
+
+if (!empty($_POST['honeypot'])) {
     echo "error; suspicious activity detected!";
     exit;
 }
 
-// Timestamp validation
-if (($current_time - $timestamp) < 5) {  // Now, this will work correctly
+if (($current_time - $timestamp) < 5) {
     echo "error; form submitted too quickly!";
     exit;
 }
 
-// Validate required fields
 if (trim($name) == '' || trim($phone) == '' || trim($message) == '' || trim($visitor_email) == '') {
     echo "all fields are mandatory";
     exit;
 }
 
-// Validate email
 if (IsInjected($visitor_email)) {
-    echo "Bad email value!";
+    echo "Invalid email value!";
     exit;
 }
 
-// Check for spam keywords
 if (containsSpamKeywords($message)) {
     echo "error; spam content detected!";
     exit;
 }
 
-// Check for URLs in the message
 if (containsUrl($message)) {
     echo "error; no links allowed in the message!";
     exit;
 }
 
-// Validate email format
 if (!filter_var($visitor_email, FILTER_VALIDATE_EMAIL)) {
     echo "Invalid email format!";
     exit;
 }
 
-// Verify reCAPTCHA
-$recaptcha_secret = '6LcCNgEqAAAAAFYg3iOojgGJolOmVodtfT95swu2';
-$recaptcha_response = $_POST['g-recaptcha-response'];
-
-$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$recaptcha_secret&response=$recaptcha_response");
-$response_keys = json_decode($response, true);
-
-if (intval($response_keys["success"]) !== 1) {
-    echo 'Please complete the reCAPTCHA.';
-    exit;
-}
-
-$email_from = 'noreply@calvada.com';
-$email_subject = "Email From Calvada.com";
+// Email body
 $email_body = "Name: $name\n" .
     "Phone: $phone\n" .
     "E-mail: $visitor_email\n" .
     "Message: $message\n";
 
-$to = "adupont.jr@calvada.com,gfong@calvada.com,rgonzalez@calvada.com,ogonzalez@calvada.com";
-$headers = "From: $email_from \r\n";
-$headers .= "Reply-To: $visitor_email \r\n";
+// Send email using Gmail SMTP via PHPMailer
+$mail = new PHPMailer(true);  // Create a new PHPMailer instance
 
-mail($to, $email_subject, $email_body, $headers);
+try {
+    // SMTP server settings
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'admindb@calvada.com';           // Gmail account
+    $mail->Password = 'ckye dyfj rvlu nyyn';         // Gmail App Password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;                               // TCP port for STARTTLS
 
-// Save to XLSX
-// $file_path = 'contact_submissions.xlsx';
+    // Email settings
+    $mail->setFrom('noreply@calvada.com', 'Calvada Surveying');   // Sender address and name
+    $mail->addAddress('gfong@calvada.com');                       
+    $mail->addAddress('glenn@calvada.com');
+    $mail->addAddress('rgonzalez@calvada.com');
+    $mail->addAddress('adupont.jr@calvada.com');
+    $mail->addAddress('ogonzalez@calvada.com');
 
-// if (file_exists($file_path)) {
-//     $xlsx = \Shuchkin\SimpleXLSXGen::fromFile($file_path);
-//     $sheet_data = $xlsx->rows();
-//     $sheet_data[] = [$name, $phone, $visitor_email, $message, date("Y-m-d H:i:s", $current_time)];
-//     $xlsx = \Shuchkin\SimpleXLSXGen::fromArray($sheet_data);
-// } else {
-//     $xlsx = new \Shuchkin\SimpleXLSXGen();
-//     $xlsx->addSheet([['Name', 'Phone', 'Email', 'Message', 'Timestamp'], [$name, $phone, $visitor_email, $message, date("Y-m-d H:i:s", $current_time)]], 'Sheet1');
-// }
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = 'Email From Calvada.com';            // Email subject
+    $mail->Body = nl2br($email_body);          // Email body, convert newlines to <br>
+    $mail->AltBody = $email_body;                         // Plain text alternative for non-HTML mail clients
 
-// $xlsx->saveAs($file_path);
-
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
 
 header('Location: /thank-you.html');
 
-// Function to validate against any email injection attempts
+// Email validation function
 function IsInjected($str)
 {
     $injections = array(
@@ -121,7 +133,7 @@ function IsInjected($str)
     }
 }
 
-// Function to check for spam keywords
+// Spam keyword function
 function containsSpamKeywords($message)
 {
     $spam_keywords = array(
@@ -152,7 +164,28 @@ function containsSpamKeywords($message)
         'жителей',
         'Министр',
         'и',
-        'DodikErwansyah.com'
+        'DodikErwansyah.com',
+        'seo',
+        'cheap',
+        'free',
+        'offer',
+        'loan',
+        'bitcoin',
+        'cryptocurrency',
+        'pharmacy',
+        'discount',
+        'weight loss',
+        'adult',
+        'cbd',
+        'webcam',
+        'escort',
+        'dating',
+        'price',
+        'lowest price',
+        'Tedbap',
+        'price',
+        'prezo',
+        'árát'
     );
 
     foreach ($spam_keywords as $keyword) {
@@ -166,12 +199,9 @@ function containsSpamKeywords($message)
 // Function to check for URLs in the message
 function containsUrl($message)
 {
-    // Regular expression to match URLs
     $url_pattern = '/\b(?:https?:\/\/|www\.)\S+\b/i';
-
     if (preg_match($url_pattern, $message)) {
         return true;
     }
     return false;
 }
-?>

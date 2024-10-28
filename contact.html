@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="css/form.css" />
     <link rel="stylesheet" href="css/aos.css" />
     <link rel="icon" href="images/logos/favicon.ico" type="image/x-icon" />
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-    <!-- Header include -->
+    
+    <!-- Load reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6Le4_WkqAAAAAHYQ1_XG3i6AEFnvDVUJl9UTl6If"></script>
   </head>
 
   <!-- Google tag (gtag.js) -->
@@ -101,12 +101,6 @@
                 ></textarea>
               </div>
               <div class="formFields">
-                <div
-                  class="g-recaptcha"
-                  data-sitekey="6LcCNgEqAAAAAKKsB5VorcsWa6qFZJgb8RWxfUNH"
-                ></div>
-              </div>
-              <div class="formFields">
                 <input type="submit" name="Submit" value="Submit" />
               </div>
               <input
@@ -141,6 +135,15 @@
     </script>
     <script>
       document.documentElement.style.scrollBehavior = "smooth";
+    </script>
+
+    <!-- reCAPTCHA v3 token generation -->
+    <script>
+      grecaptcha.ready(function() {
+        grecaptcha.execute('6Le4_WkqAAAAAHYQ1_XG3i6AEFnvDVUJl9UTl6If', {action: 'submit'}).then(function(token) {
+          document.getElementById('contactform').insertAdjacentHTML('beforeend', '<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
+        });
+      });
     </script>
     
     <script>
