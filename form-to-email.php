@@ -1,6 +1,8 @@
 <?php
 require './libs/vendor/autoload.php'; // Composer autoloader (for PHPMailer installed via Composer)
 
+date_default_timezone_set('America/Los_Angeles');
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -72,6 +74,30 @@ if (!filter_var($visitor_email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
+// Database connection and data insertion
+$servername = "localhost";
+$username = "contact_form_db";
+$password = "MariContact_US@DB2023";
+$dbname = "contact_form_db";
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
+}
+
+$stmt = $conn->prepare("INSERT INTO contacts (name, email, phone, message) VALUES (?, ?, ?, ?)");
+$stmt->bind_param("ssss", $name, $visitor_email, $phone, $message);
+
+if (!$stmt->execute()) {
+    echo "Error: " . $stmt->error;
+} else {
+    echo "Record successfully saved.";
+}
+
+$stmt->close();
+$conn->close();
+
+
 // Email body
 $email_body = "Name: $name\n" .
     "Phone: $phone\n" .
@@ -93,10 +119,10 @@ try {
 
     // Email settings
     $mail->setFrom('noreply@calvada.com', 'Calvada Surveying');   // Sender address and name
-    $mail->addAddress('gfong@calvada.com');                       
-    $mail->addAddress('glenn@calvada.com');
-    $mail->addAddress('rgonzalez@calvada.com');
-    $mail->addAddress('adupont.jr@calvada.com');
+    // $mail->addAddress('gfong@calvada.com');                       
+    // $mail->addAddress('glenn@calvada.com');
+    // $mail->addAddress('rgonzalez@calvada.com');
+    // $mail->addAddress('adupont.jr@calvada.com');
     $mail->addAddress('ogonzalez@calvada.com');
 
     $mail->isHTML(true);                                  // Set email format to HTML
