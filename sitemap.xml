@@ -1,261 +1,168 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-
-		  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-
-		  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
 
 				http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-<url>
+    <url>
 
-    <loc>https://www.calvada.com/</loc>
+        <loc>https://www.calvada.com/</loc>
 
-    <priority>1.00</priority>
+        <priority>1.00</priority>
 
-    <changefreq>monthly</changefreq>
+        <changefreq>monthly</changefreq>
 
-</url>
+    </url>
 
-<url>
+    <url>
 
-    <loc>https://www.calvada.com/about.html</loc>
+        <loc>https://www.calvada.com/about.html</loc>
 
-    <priority>0.80</priority>
+        <priority>0.80</priority>
 
-    <changefreq>monthly</changefreq>
+        <changefreq>monthly</changefreq>
 
-</url>
+    </url>
 
-	<url>
+    <url>
 
-    <loc>https://www.calvada.com/our-team.html</loc>
+        <loc>https://www.calvada.com/our-team.html</loc>
 
-    <priority>0.80</priority>
+        <priority>0.80</priority>
 
-    <changefreq>monthly</changefreq>
+        <changefreq>monthly</changefreq>
 
-</url>
+    </url>
 
-		<url>
+    <url>
 
-    <loc>https://www.calvada.com/land-title-surveys.html</loc>
+        <loc>https://www.calvada.com/contact.html</loc>
 
-    <priority>0.80</priority>
+        <priority>0.50</priority>
 
-    <changefreq>monthly</changefreq>
+        <changefreq>monthly</changefreq>
 
-</url>
+    </url>
 
-		<url>
+    <url>
 
-    <loc>https://www.calvada.com/land-surveying-services.html</loc>
+        <loc>https://www.calvada.com/careers.html</loc>
 
-    <priority>0.80</priority>
+        <priority>0.50</priority>
 
-    <changefreq>monthly</changefreq>
+        <changefreq>monthly</changefreq>
 
-</url>
+    </url>
 
-		<url>
+    <url>
 
-    <loc>https://www.calvada.com/topographic-survey.html</loc>
+        <loc>https://www.calvada.com/locations/las-vegas-land-surveyor.html</loc>
 
-    <priority>0.80</priority>
+        <priority>0.80</priority>
 
-    <changefreq>monthly</changefreq>
+        <changefreq>monthly</changefreq>
 
-</url>
+    </url>
 
-		<url>
+    <url>
 
-    <loc>https://www.calvada.com/boundary-surveys.html</loc>
+        <loc>https://www.calvada.com/locations/sacramento-land-surveyor.html</loc>
 
-    <priority>0.80</priority>
+        <priority>0.80</priority>
 
-    <changefreq>monthly</changefreq>
+        <changefreq>monthly</changefreq>
 
-</url>
+    </url>
 
-		<url>
+    <url>
 
-    <loc>https://www.calvada.com/mapping.html</loc>
+        <loc>https://www.calvada.com/locations/san-diego-land-surveyor.html</loc>
 
-    <priority>0.80</priority>
+        <priority>0.80</priority>
 
-    <changefreq>monthly</changefreq>
+        <changefreq>monthly</changefreq>
 
-</url>
+    </url>
 
-		<url>
+    <url>
 
-    <loc>https://www.calvada.com/telecommunication-surveys.html</loc>
+        <loc>https://www.calvada.com/locations/san-francisco-land-surveyor.html</loc>
 
-    <priority>0.80</priority>
+        <priority>0.80</priority>
 
-    <changefreq>monthly</changefreq>
+        <changefreq>monthly</changefreq>
 
-</url>
+    </url>
 
-	<url>
+    <url>
 
-    <loc>https://www.calvada.com/environmental-land-surveys.html</loc>
+        <loc>https://www.calvada.com/locations/los-angeles-land-surveyor.html</loc>
 
-    <priority>0.80</priority>
+        <priority>0.80</priority>
 
-    <changefreq>monthly</changefreq>
+        <changefreq>monthly</changefreq>
 
-</url>
+    </url>
 
-	<url>
+    <url>
 
-    <loc>https://www.calvada.com/high-definition-survey.html</loc>
+        <loc>https://www.calvada.com/locations/california-land-surveyor.html</loc>
 
-    <priority>0.80</priority>
+        <priority>0.80</priority>
 
-    <changefreq>monthly</changefreq>
+        <changefreq>monthly</changefreq>
 
-</url>
+    </url>
 
-	<url>
+    <url>
 
-    <loc>https://www.calvada.com/testimonials.html</loc>
+        <loc>https://www.calvada.com/locations/colorado-land-surveyor.html</loc>
 
-    <priority>0.50</priority>
+        <priority>0.80</priority>
 
-    <changefreq>monthly</changefreq>
+        <changefreq>monthly</changefreq>
 
-</url>
+    </url>
 
-	<url>
+    <url>
 
-    <loc>https://www.calvada.com/contact.html</loc>
+        <loc>https://www.calvada.com/locations/washington-land-surveyor.html</loc>
 
-    <priority>0.50</priority>
+        <priority>0.80</priority>
 
-    <changefreq>monthly</changefreq>
+        <changefreq>monthly</changefreq>
 
-</url>
+    </url>
 
-	<url>
+    <url>
 
-    <loc>https://www.calvada.com/careers.html</loc>
+        <loc>https://www.calvada.com/locations/arizona-land-surveyor.html</loc>
 
-    <priority>0.50</priority>
+        <priority>0.80</priority>
 
-    <changefreq>monthly</changefreq>
+        <changefreq>monthly</changefreq>
 
-</url>
+    </url>
 
-	<url>
+    <url>
 
-    <loc>https://www.calvada.com/las-vegas-land-surveyor.html</loc>
+        <loc>https://www.calvada.com/locations/nevada-land-surveyor.html</loc>
 
-    <priority>0.80</priority>
+        <priority>0.80</priority>
 
-    <changefreq>monthly</changefreq>
+        <changefreq>monthly</changefreq>
 
-</url>
+    </url>
 
-	<url>
+    <url>
 
-    <loc>https://www.calvada.com/sacramento-land-surveyor.html</loc>
+        <loc>https://www.calvada.com/locations/oregon-land-surveyor.html</loc>
 
-    <priority>0.80</priority>
+        <priority>0.80</priority>
 
-    <changefreq>monthly</changefreq>
+        <changefreq>monthly</changefreq>
 
-</url>
-
-	<url>
-
-    <loc>https://www.calvada.com/san-diego-land-surveyor.html</loc>
-
-    <priority>0.80</priority>
-
-    <changefreq>monthly</changefreq>
-
-</url>
-
-	<url>
-
-    <loc>https://www.calvada.com/san-francisco-land-surveyor.html</loc>
-
-    <priority>0.80</priority>
-
-    <changefreq>monthly</changefreq>
-
-</url>
-
-	<url>
-
-    <loc>https://www.calvada.com/los-angeles-land-surveyor.html</loc>
-
-    <priority>0.80</priority>
-
-    <changefreq>monthly</changefreq>
-
-</url>
-
-	<url>
-
-    <loc>https://www.calvada.com/california-surveyor.html</loc>
-
-    <priority>0.80</priority>
-
-    <changefreq>monthly</changefreq>
-
-</url>
-
-	<url>
-
-    <loc>https://www.calvada.com/colorado-land-surveyor.html</loc>
-
-    <priority>0.80</priority>
-
-    <changefreq>monthly</changefreq>
-
-</url>
-
-	<url>
-
-    <loc>https://www.calvada.com/washington-surveyor.html</loc>
-
-    <priority>0.80</priority>
-
-    <changefreq>monthly</changefreq>
-
-</url>
-
-	<url>
-
-    <loc>https://www.calvada.com/arizona-land-surveyor.html</loc>
-
-    <priority>0.80</priority>
-
-    <changefreq>monthly</changefreq>
-
-</url>
-
-	<url>
-
-    <loc>https://www.calvada.com/nevada-surveyor.html</loc>
-
-    <priority>0.80</priority>
-
-    <changefreq>monthly</changefreq>
-
-</url>
-
-	<url>
-
-    <loc>https://www.calvada.com/oregon-land-surveyors.html</loc>
-
-    <priority>0.80</priority>
-
-    <changefreq>monthly</changefreq>
-
-</url>
+    </url>
 
 </urlset>

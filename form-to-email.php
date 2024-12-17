@@ -28,37 +28,49 @@ if (!$response_keys['success'] || $response_keys['score'] < 0.5) {
 $visitor_email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
 $name = trim(strip_tags($_POST['name']));
 $phone = trim(strip_tags($_POST['phone']));
+$service = trim(strip_tags($_POST['service'])); // New field from dropdown
 $message = trim(strip_tags($_POST['message']));
 
 $honeypot = $_POST['honeypot'];
 $timestamp = (int) $_POST['timestamp'];
 $current_time = time();
 
+// Phone validation: Adjust as needed; currently checks for + and 10-15 digits
 if (!preg_match('/^\+?[0-9]{10,15}$/', $phone)) {
     echo "Invalid phone number!";
     exit;
 }
 
-if (!empty($_POST['honeypot'])) {
+// Honeypot check
+if (!empty($honeypot)) {
     echo "error; suspicious activity detected!";
     exit;
 }
 
+// Timing check to prevent quick spam
 if (($current_time - $timestamp) < 5) {
     echo "error; form submitted too quickly!";
     exit;
 }
 
-if (trim($name) == '' || trim($phone) == '' || trim($message) == '' || trim($visitor_email) == '') {
-    echo "all fields are mandatory";
+// Check all required fields
+if (trim($name) == '' || trim($phone) == '' || trim($message) == '' || trim($visitor_email) == '' || trim($service) == '') {
+    echo "All fields are mandatory";
     exit;
 }
 
+// Email format and injection checks
 if (IsInjected($visitor_email)) {
     echo "Invalid email value!";
     exit;
 }
 
+if (!filter_var($visitor_email, FILTER_VALIDATE_EMAIL)) {
+    echo "Invalid email format!";
+    exit;
+}
+
+// Spam checks
 if (containsSpamKeywords($message)) {
     echo "error; spam content detected!";
     exit;
@@ -66,11 +78,6 @@ if (containsSpamKeywords($message)) {
 
 if (containsUrl($message)) {
     echo "error; no links allowed in the message!";
-    exit;
-}
-
-if (!filter_var($visitor_email, FILTER_VALIDATE_EMAIL)) {
-    echo "Invalid email format!";
     exit;
 }
 
@@ -85,8 +92,9 @@ if ($conn->connect_error) {
     die("Database connection failed: " . $conn->connect_error);
 }
 
-$stmt = $conn->prepare("INSERT INTO contacts (name, email, phone, message) VALUES (?, ?, ?, ?)");
-$stmt->bind_param("ssss", $name, $visitor_email, $phone, $message);
+// Insert with `service` field included
+$stmt = $conn->prepare("INSERT INTO contacts (name, email, phone, service, message) VALUES (?, ?, ?, ?, ?)");
+$stmt->bind_param("sssss", $name, $visitor_email, $phone, $service, $message);
 
 if (!$stmt->execute()) {
     echo "Error: " . $stmt->error;
@@ -97,11 +105,11 @@ if (!$stmt->execute()) {
 $stmt->close();
 $conn->close();
 
-
-// Email body
+// Email body with Service included
 $email_body = "Name: $name\n" .
     "Phone: $phone\n" .
     "E-mail: $visitor_email\n" .
+    "Service: $service\n" .
     "Message: $message\n";
 
 // Send email using Gmail SMTP via PHPMailer
@@ -113,21 +121,21 @@ try {
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'admindb@calvada.com';           // Gmail account
-    $mail->Password = 'ckye dyfj rvlu nyyn';         // Gmail App Password
+    $mail->Password = 'ckye dyfj rvlu nyyn';           // Gmail App Password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;                               // TCP port for STARTTLS
+    $mail->Port = 587;                                 // TCP port for STARTTLS
 
     // Email settings
     $mail->setFrom('noreply@calvada.com', 'Calvada Surveying');   // Sender address and name
-    // $mail->addAddress('gfong@calvada.com');                       
-    // $mail->addAddress('glenn@calvada.com');
-    // $mail->addAddress('rgonzalez@calvada.com');
-    // $mail->addAddress('adupont.jr@calvada.com');
+    $mail->addAddress('gfong@calvada.com');                        
+    $mail->addAddress('glenn@calvada.com');
+    $mail->addAddress('rgonzalez@calvada.com');
+    $mail->addAddress('adupont.jr@calvada.com');
     $mail->addAddress('ogonzalez@calvada.com');
 
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Email From Calvada.com';            // Email subject
-    $mail->Body = nl2br($email_body);          // Email body, convert newlines to <br>
+    $mail->Body = nl2br($email_body);                     // Email body, convert newlines to <br>
     $mail->AltBody = $email_body;                         // Plain text alternative for non-HTML mail clients
 
     $mail->send();

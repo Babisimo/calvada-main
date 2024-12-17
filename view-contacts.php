@@ -13,13 +13,14 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Retrieve data from the contacts table
-$sql = "SELECT * FROM contacts ORDER BY timestamp DESC";
+// Retrieve data from the contacts table, including the service field
+$sql = "SELECT id, name, email, phone, service, message, timestamp FROM contacts ORDER BY timestamp DESC";
 $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Contact Submissions</title>
@@ -27,7 +28,7 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css">
-    
+
     <!-- jQuery first, then DataTables and Buttons JS in the correct order -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
@@ -35,7 +36,6 @@ $result = $conn->query($sql);
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
     <link rel="icon" href="/images/logos/favicon.ico" type="/image/x-icon" />
-
     <style>
         /* General styling */
         body {
@@ -75,7 +75,8 @@ $result = $conn->query($sql);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        th, td {
+        th,
+        td {
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
@@ -139,9 +140,12 @@ $result = $conn->query($sql);
 
         /* Button styling */
         .dt-buttons .buttons-html5 {
-            background-color: #365e32; /* Dark green background */
-            color: #ffffff; /* White text color */
-            border: 1px solid #4b8446; /* Border matches theme */
+            background-color: #365e32;
+            /* Dark green background */
+            color: #ffffff;
+            /* White text color */
+            border: 1px solid #4b8446;
+            /* Border matches theme */
             padding: 6px 12px;
             border-radius: 4px;
             font-weight: bold;
@@ -152,7 +156,8 @@ $result = $conn->query($sql);
 
         /* Hover effect for Export Button */
         .dt-buttons .buttons-html5:hover {
-            background-color: #4b8446; /* Lighter green on hover */
+            background-color: #4b8446;
+            /* Lighter green on hover */
             color: #ffffff;
         }
     </style>
@@ -171,6 +176,7 @@ $result = $conn->query($sql);
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
+                        <th>Service</th>
                         <th>Message</th>
                         <th>Timestamp</th>
                     </tr>
@@ -184,12 +190,13 @@ $result = $conn->query($sql);
                             echo "<td>" . htmlspecialchars($row["name"]) . "</td>";
                             echo "<td>" . htmlspecialchars($row["email"]) . "</td>";
                             echo "<td>" . htmlspecialchars($row["phone"]) . "</td>";
+                            echo "<td>" . htmlspecialchars($row["service"]) . "</td>";
                             echo "<td>" . htmlspecialchars($row["message"]) . "</td>";
                             echo "<td>" . htmlspecialchars($row["timestamp"]) . "</td>";
                             echo "</tr>";
                         }
                     } else {
-                        echo "<tr><td colspan='6'>No submissions found.</td></tr>";
+                        echo "<tr><td colspan='7'>No submissions found.</td></tr>";
                     }
                     ?>
                 </tbody>
@@ -206,7 +213,7 @@ $result = $conn->query($sql);
                 "searching": true,
                 "ordering": true,
                 "info": true,
-                "order": [[5, "desc"]],
+                "order": [[6, "desc"]],
                 "dom": 'Bfrtip', // "B" for buttons
                 "buttons": [
                     {

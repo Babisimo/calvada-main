@@ -84,7 +84,8 @@ form .formFields {
 form .formFields input[type="text"],
 form .formFields input[type="email"],
 form .formFields input[type="tel"],
-form .formFields textarea {
+form .formFields textarea,
+form .formFields select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ddd;

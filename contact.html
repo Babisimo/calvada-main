@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="css/form.css" />
     <link rel="stylesheet" href="css/aos.css" />
     <link rel="icon" href="images/logos/favicon.ico" type="image/x-icon" />
-    
+
     <!-- Load reCAPTCHA v3 -->
     <script src="https://www.google.com/recaptcha/api.js?render=6Le4_WkqAAAAAHYQ1_XG3i6AEFnvDVUJl9UTl6If"></script>
   </head>
@@ -92,6 +92,16 @@
                 />
               </div>
               <div class="formFields">
+                <select id="service" name="service" required>
+                  <option value="" disabled selected>Select a Service</option>
+                  <option value="Environmental">Environmental</option>
+                  <option value="Topographic Survey">Topographic Survey</option>
+                  <option value="ALTA">ALTA</option>
+                  <option value="Residential">Residential</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="formFields">
                 <textarea
                   type="text"
                   id="message"
@@ -139,13 +149,24 @@
 
     <!-- reCAPTCHA v3 token generation -->
     <script>
-      grecaptcha.ready(function() {
-        grecaptcha.execute('6Le4_WkqAAAAAHYQ1_XG3i6AEFnvDVUJl9UTl6If', {action: 'submit'}).then(function(token) {
-          document.getElementById('contactform').insertAdjacentHTML('beforeend', '<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
-        });
+      grecaptcha.ready(function () {
+        grecaptcha
+          .execute("6Le4_WkqAAAAAHYQ1_XG3i6AEFnvDVUJl9UTl6If", {
+            action: "submit",
+          })
+          .then(function (token) {
+            document
+              .getElementById("contactform")
+              .insertAdjacentHTML(
+                "beforeend",
+                '<input type="hidden" name="g-recaptcha-response" value="' +
+                  token +
+                  '">'
+              );
+          });
       });
     </script>
-    
+
     <script>
       window.addEventListener("pageshow", function (event) {
         if (
