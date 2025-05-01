@@ -1,4 +1,16 @@
 <?php
+// List of allowed IP addresses (Replace with your office/public IPs)
+$allowed_ips = ['72.34.88.2']; // Example IPs
+
+// Get the user's IP address
+$user_ip = $_SERVER['REMOTE_ADDR'];
+
+// Check if the user's IP is in the allowed list
+if (!in_array($user_ip, $allowed_ips)) {
+    header("HTTP/1.1 403 Forbidden");
+    echo "Access Denied - Your IP ($user_ip) is not authorized.";
+    exit;
+}
 // Database connection details
 $servername = "localhost";
 $username = "contact_form_db";
@@ -186,13 +198,13 @@ $result = $conn->query($sql);
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr>";
-                            echo "<td>" . htmlspecialchars($row["id"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["name"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["email"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["phone"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["service"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["message"]) . "</td>";
-                            echo "<td>" . htmlspecialchars($row["timestamp"]) . "</td>";
+                            echo "<td>" . htmlspecialchars($row["id"] ?? '') . "</td>";
+                            echo "<td>" . htmlspecialchars($row["name"] ?? '') . "</td>";
+                            echo "<td>" . htmlspecialchars($row["email"] ?? '') . "</td>";
+                            echo "<td>" . htmlspecialchars($row["phone"] ?? '') . "</td>";
+                            echo "<td>" . htmlspecialchars($row["service"] ?? '') . "</td>";
+                            echo "<td>" . htmlspecialchars($row["message"] ?? '') . "</td>";
+                            echo "<td>" . htmlspecialchars($row["timestamp"] ?? '') . "</td>";
                             echo "</tr>";
                         }
                     } else {
